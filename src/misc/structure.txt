@@ -1,0 +1,53 @@
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Layout.tsx
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── ProjectCard.tsx      # For project listings
+│   │   └── PostCard.tsx         # For blog listings
+│   └── sections/
+│       ├── Hero.tsx
+│       ├── FeaturedProjects.tsx # Shows recent projects
+│       └── Contact.tsx
+├── pages/
+│   ├── index.tsx               # Homepage with hero + featured projects
+│   ├── projects.tsx            # All projects listing page
+│   ├── blog.tsx                # All blog posts listing page
+│   └── about.tsx               # About page
+├── templates/
+│   ├── project-template.tsx    # Template for individual projects
+│   └── blog-template.tsx       # Template for blog posts
+├── content/
+│   ├── projects/
+│   │   ├── ecommerce-app.md
+│   │   ├── weather-dashboard.md
+│   │   └── task-manager.md
+│   └── blog/
+│       ├── react-performance-tips.md
+│       └── my-coding-journey.md
+├── images/
+│   ├── projects/
+│   │   ├── ecommerce-app/
+│   │   │   ├── hero.jpg
+│   │   │   ├── screenshot-1.png
+│   │   │   └── demo.gif
+│   │   ├── weather-dashboard/
+│   │   │   └── preview.jpg
+│   │   └── task-manager/
+│   │       ├── mobile.jpg
+│   │       └── desktop.jpg
+│   ├── blog/
+│   │   └── react-performance/
+│   │       └── chart.png
+│   └── general/
+│       ├── avatar.jpg
+│       └── hero-bg.jpg
+├── styles/
+│   ├── global.css
+│   └── prose.css              # Custom styles for markdown content
+└── data/
+    └── site-config.json       # Site metadata, social links, etc.
