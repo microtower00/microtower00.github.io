@@ -1,8 +1,7 @@
-// src/templates/blog-post.tsx
 import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
-// import { MDXRenderer } from "gatsby-plugin-mdx"
+import Header from "../components/layout/Header";
 
 type BlogPostProps = {
   data: {
@@ -12,8 +11,11 @@ type BlogPostProps = {
         date: string;
       };
       body: string;
+      // For Gatsby v5 with newer MDX
+      children?: React.ReactNode;
     };
   };
+  children?: React.ReactNode; // For Gatsby v5
 };
 
 const blogComponents = {
@@ -25,21 +27,24 @@ const blogComponents = {
   ),
 };
 
-export default function BlogPostTemplate({ data }: BlogPostProps) {
+export default function BlogPostTemplate({ data, children }: BlogPostProps) {
   const { title, date } = data.mdx.frontmatter;
 
   return (
-    <main
-      className="blog-post-style"
-      style={{ maxWidth: "680px", margin: "0 auto", padding: "2rem" }}
-    >
-      <h1>{title}</h1>
-      <p style={{ color: "#666", fontSize: "0.9rem" }}>{date}</p>
-      <MDXProvider components={blogComponents}>
-        {data.mdx.body}
-        {/* <MDXRenderer>{data.mdx.body}</MDXRenderer> */}
-      </MDXProvider>
-    </main>
+    <>
+      <Header />
+      <main
+        className="blog-post-style"
+        style={{ maxWidth: "680px", margin: "0 auto", padding: "2rem" }}
+      >
+        <h1>{title}</h1>
+        <p style={{ color: "#666", fontSize: "0.9rem" }}>{date}</p>
+        <MDXProvider components={blogComponents}>
+          {/* For Gatsby v5+ - MDX content comes as children */}
+          {children}
+        </MDXProvider>
+      </main>
+    </>
   );
 }
 
@@ -50,7 +55,6 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
       }
-      body
     }
   }
 `;
