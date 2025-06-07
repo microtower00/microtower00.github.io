@@ -1,29 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Departure Mono", Courier, monospace;
 }
 
 .headerLink {
-  border-color: white;
-  border-radius: 8px;
+  /* border-color: white; */
+  /* border-radius: 8px; */
   color: white;
-  border-width: 1px;
+  /* border-width: 1px; */
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   a {
-    text-decoration: none;
+    /* text-decoration: none; */
     padding: 16px;
-    border: 1px solid white;
-    border-radius: 8px;
+    /* border: 1px solid white; */
+    /* border-radius: 8px; */
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
     }
     transition: background-color 0.3s ease;
   }
+}
+
+.hero-section {
+  display: flex;
+  height: calc(100vh - 64px);
+  background-color: #f0f0f0;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    width: 50%;
+    font-size: 44px;
+    font-weight: 500;
+  }
+}
+
+.accentColor {
+  color: #502678; /* Example accent color */
+}
+
+.bolded {
+  font-weight: bold;
+  /* font-weight: 900; */
 }
