@@ -1,5 +1,13 @@
 import React from "react";
-import { Link } from "gatsby";
+
+const linkList: {
+  [key: string]: string;
+} = {
+  Home: "/",
+  About: "/about",
+  Blog: "/blog",
+  Projects: "/projects",
+};
 
 const HeaderLink: React.FC<{ to: string; children: React.ReactNode }> = ({
   to,
@@ -30,10 +38,11 @@ const Header: React.FC = () => {
             color: "white",
           }}
         >
-          <HeaderLink to="/">Home</HeaderLink>
-          <HeaderLink to="/about">About</HeaderLink>
-          <HeaderLink to="/blog">Blog</HeaderLink>
-          <HeaderLink to="/projects">Projects</HeaderLink>
+          {Object.keys(linkList).map((key) => (
+            <HeaderLink key={key} to={linkList[key]}>
+              {key.toLocaleUpperCase()}
+            </HeaderLink>
+          ))}
         </ul>
       </nav>
     </header>
