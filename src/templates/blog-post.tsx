@@ -9,13 +9,13 @@ type BlogPostProps = {
       frontmatter: {
         title: string;
         date: string;
+        tags?: string[];
       };
       body: string;
-      // For Gatsby v5 with newer MDX
       children?: React.ReactNode;
     };
   };
-  children?: React.ReactNode; // For Gatsby v5
+  children?: React.ReactNode;
 };
 
 const blogComponents = {
@@ -28,7 +28,7 @@ const blogComponents = {
 };
 
 export default function BlogPostTemplate({ data, children }: BlogPostProps) {
-  const { title, date } = data.mdx.frontmatter;
+  const { title, date, tags } = data.mdx.frontmatter;
 
   return (
     <>
@@ -39,10 +39,16 @@ export default function BlogPostTemplate({ data, children }: BlogPostProps) {
       >
         <h1>{title}</h1>
         <p style={{ color: "#666", fontSize: "0.9rem" }}>{date}</p>
-        <MDXProvider components={blogComponents}>
-          {/* For Gatsby v5+ - MDX content comes as children */}
-          {children}
-        </MDXProvider>
+        {tags && tags.length > 0 && (
+          <ul className="flex flex-wrap gap-2 mt-2 mb-6 text-sm text-blue-700">
+            {tags.map((tag) => (
+              <li key={tag} className="bg-blue-100 px-2 py-1 rounded">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
+        <MDXProvider components={blogComponents}>{children}</MDXProvider>
       </main>
     </>
   );
@@ -54,6 +60,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM D, YYYY")
+        tags
       }
     }
   }

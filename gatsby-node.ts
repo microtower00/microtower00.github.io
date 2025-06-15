@@ -48,15 +48,24 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const filePath = node.internal.contentFilePath;
     const isBlog = /\/blog\//.test(filePath);
     const pathPrefix = isBlog ? "blog" : "projects";
-
     const relativePath = path.relative(
       path.join(__dirname, "src/content", pathPrefix),
       filePath
     );
     const filename = relativePath.replace(/\.mdx?$/, "");
 
-    // Use frontmatter slug if it exists and is valid; else build from file path
-    const fmSlug = node.frontmatter?.slug || "";
+    const fmSlug = node.frontmatter?.slug;
+    console.log(
+      `Processing file: ${filePath}, slug: ${fmSlug}, isBlog: ${isBlog}`
+    );
+
+    // Fail build if slug is missing or empty
+    if (!fmSlug || typeof fmSlug !== "string" || !fmSlug.trim()) {
+      throw new Error(
+        `Missing or invalid 'slug' in frontmatter of file: ${filePath}`
+      );
+    }
+
     const cleanSlug = fmSlug.startsWith(`/${pathPrefix}/`)
       ? fmSlug
       : `/${pathPrefix}/${filename}`;
