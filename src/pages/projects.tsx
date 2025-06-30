@@ -11,6 +11,7 @@ type ProjectListProps = {
           title: string;
           date: string;
           slug: string;
+          public: boolean;
         };
       }[];
     };
@@ -44,13 +45,16 @@ export const query = graphql`
   query ProjectsIndexQuery {
     allMdx(
       sort: { frontmatter: { date: DESC } }
-      filter: { internal: { contentFilePath: { regex: "/content/projects/" } } }
+      filter: {
+        internal: { contentFilePath: { regex: "/content/projects/" } }
+        frontmatter: { public: { ne: false } }
+      }
     ) {
       nodes {
         id
         frontmatter {
           title
-          date(formatString: "MMMM D, YYYY")
+          date
           slug
         }
       }

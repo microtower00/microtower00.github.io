@@ -9,6 +9,7 @@ type QueryResult = {
       };
       frontmatter: {
         slug: string;
+        public?: boolean;
       };
     }[];
   };
@@ -34,6 +35,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
           }
           frontmatter {
             slug
+            public
           }
         }
       }
@@ -45,6 +47,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const data = result.data as QueryResult;
 
   data.allMdx.nodes.forEach((node) => {
+    if (node.frontmatter.public === false) return;
     const filePath = node.internal.contentFilePath;
     const isBlog = /\/blog\//.test(filePath);
     const pathPrefix = isBlog ? "blog" : "projects";
@@ -55,9 +58,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const filename = relativePath.replace(/\.mdx?$/, "");
 
     const fmSlug = node.frontmatter?.slug;
-    console.log(
-      `Processing file: ${filePath}, slug: ${fmSlug}, isBlog: ${isBlog}`
-    );
 
     // Fail build if slug is missing or empty
     if (!fmSlug || typeof fmSlug !== "string" || !fmSlug.trim()) {
@@ -76,7 +76,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
     createPage({
       path: cleanSlug,
-      component: `${template}?__contentFilePath=${filePath}`,
+      component: `${template}?__contentFilePath=${path.resolve(filePath)}`,
       context: { id: node.id },
     });
   });

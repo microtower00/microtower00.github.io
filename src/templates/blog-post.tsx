@@ -19,9 +19,9 @@ type BlogPostProps = {
 };
 
 const blogComponents = {
-  h1: (props: any) => (
-    <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }} {...props} />
-  ),
+  // h1: (props: any) => (
+  //   <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }} {...props} />
+  // ),
   p: (props: any) => (
     <p style={{ lineHeight: 1.7, margin: "1.2rem 0" }} {...props} />
   ),
@@ -59,7 +59,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
-        date(formatString: "MMMM D, YYYY")
+        date
         tags
       }
     }

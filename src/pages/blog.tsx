@@ -11,6 +11,7 @@ type BlogListProps = {
           title: string;
           date: string;
           slug: string;
+          public: boolean;
         };
       }[];
     };
@@ -21,9 +22,9 @@ export default function BlogPage({ data }: BlogListProps) {
   const posts = data.allMdx.nodes;
 
   return (
-    <main className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Blog</h1>
-      <ul className="space-y-4">
+    <main>
+      <h1>Blog</h1>
+      <ul>
         {posts.map((post) => (
           <li key={post.id}>
             <Link
@@ -44,13 +45,16 @@ export const query = graphql`
   query BlogIndexQuery {
     allMdx(
       sort: { frontmatter: { date: DESC } }
-      filter: { internal: { contentFilePath: { regex: "/content/blog/" } } }
+      filter: {
+        internal: { contentFilePath: { regex: "/content/blog/" } }
+        frontmatter: { public: { ne: false } }
+      }
     ) {
       nodes {
         id
         frontmatter {
           title
-          date(formatString: "MMMM D, YYYY")
+          date
           slug
         }
       }
