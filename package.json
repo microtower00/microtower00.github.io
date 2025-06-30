@@ -4,6 +4,17 @@
   "private": true,
   "description": "portfolio",
   "author": "microtower00",
+  "license": "SEE LICENSE IN LICENSE",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/microtower00/portfolio/blob/main/LICENSE-CODE"
+    },
+    {
+      "type": "CC-BY-NC-4.0",
+      "url": "https://github.com/microtower00/portfolio/blob/main/LICENSE-CONTENT"
+    }
+  ],
   "keywords": [
     "gatsby"
   ],
