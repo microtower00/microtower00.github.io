@@ -1,0 +1,169 @@
+---
+title: "How to Pirate a book"
+date: "2023-11-15"
+slug: "/blog/pirate-book"
+author: "Michele"
+---
+
+import { StaticImage } from "gatsby-plugin-image";
+import freshlyPrinted from "./photo_2023-10-31_21-31-34.jpg";
+import image from "./libro1.png";
+import image2 from "./libro2.png";
+import photoMessy from "./photo_2023-10-31_21-31-37.jpg";
+import foldedBooklets from "./Pasted image 20231031213450.png";
+import photoHoles from "./photo_2023-11-15_17-06-57.jpg";
+import photoHolesAll from "./photo_2023-11-15_17-06-41.jpg";
+import photoStitched from "./photo_2023-11-15_17-06-33.jpg";
+import photoFinished from "./photo_2023-11-15_17-05-27.jpg";
+
+This process describes how to pirate a book because i believe knowledge should be universal. This can be done using just regular a4 printer paper, a regular printer, a stapler, tape.
+Also I think you're an asshole if you are trying to economically gain from this.
+
+To achieve this i'm going to try to help you create a pdf where pages are a5 size, so thath you can fit 4 pages of the book on one sheet of a4 paper.
+
+Follow these steps:
+
+1. **Source a book's pdf**. I suggest [zlibrary](https://z-lib.is) (note that the link might be broken since no authorities want this site to distribute free knowledge)
+2. Split the book in smaller pdfs, 12 pages each is what i found good. You can have larger booklets if you prefer, but remember to split the pages in multiples of 4, to avoid not filling a sheet of paper with pages (That is because we will print 4 pages on each sheet of paper, so having a booklet of say 10 pages will leave 2 blank spaces in our sheet, thus wasting paper).
+   To perform this I use a Linux distro with a terminal command called [`pdftk`](https://packages.debian.org/search?keywords=pdftk)
+   The command you need is
+
+```bash
+   pdftk YOUR_BOOK.pdf cat START_PAGE-END_PAGE output OUTPUT_FILE_NAME.pdf
+```
+
+To avoid performing this manually every 12 pages you can build a mini bash script just like this:
+
+```bash
+input_file="your_book.pdf"
+output_dir="output"
+pages_per_booklet=12
+
+# Create the output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Calculate the number of booklets needed
+total_pages=$(pdfinfo "$input_file" | grep "Pages" | awk '{print $2}')
+booklet_count=$((total_pages / pages_per_booklet))
+
+# Loop to split the PDF into booklets
+for ((i = 1; i <= booklet_count; i++)); do
+	   start_page=$((i * pages_per_booklet - pages_per_booklet + 1))
+	   end_page=$((i * pages_per_booklet))
+	   output_file="$output_dir/booklet$i.pdf"
+	   pdftk "$input_file" cat $start_page-$end_page output "$output_file"
+done
+```
+
+Considering my book is 260 pages long, this splits it into 22 booklets with 12 pages each. To modify the script, just edit `input_file`,`output_dir`,`pages_per_booklet` with your preferred settings.
+At the end you should have a directory where your pdf has been split into different smaller pdfs.
+
+3. Once you have your split pdfs, you're going to want to format the pages so that you have 2 on each sheet of paper, and arrange them so that they are in the correct order to be printed as a booklet. I am unable to perform these operations manually, but I have found a tool to perform just this. It is called [`pdfbook2`](https://gitlab.com/pablo13/pdf-tools).
+   Just call the command followed by the booklet name, in my case `pdfbook2 booklet1.pdf`. You should do this for each booklet. If you have too many or you are just lazy like me here's a small bash script to call it for you:
+
+```bash
+for i in {1..22}; do
+  booklet="booklet$i.pdf"
+  pdfbook2 "$booklet"
+done
+```
+
+This works if you used the script above and you have 22 booklets. Otherwise you should modify the booklet name and number.
+
+Using this script or the `pdfbook2` command we go from this
+
+<img
+  src={image}
+  alt="Booklet before formatting"
+  caption="Booklet before formatting"
+  title="Booklet before formatting"
+/>
+to something more like this
+<img
+  src={image2}
+  alt="Booklet after formatting"
+  caption="Booklet after formatting"
+  title="Booklet after formatting"
+/>
+
+4.  You should now have a bunch of files named `bookletN-book.pdf` where N is an arbitrary integer number. We are ready to print. Print all of the _bookized_ booklets, but make sure you are trying to print on both sides of the paper.
+    I suggest you do a test print of only one of the booklets so that you can catch errors early and fix your printing setup. Every printer has different settings so it is hard for me to try and suggest a setup. I say use your your free will here.
+
+    Freshly printed booklets
+
+    <img
+      src={freshlyPrinted}
+      alt="Freshly printed booklets"
+      caption="Freshly printed booklets"
+      title="Freshly printed booklets"
+    />
+
+    <br />
+
+1.  Now you need to bind the book. There are a million ways of doing this. I think the cheapest one would be to just **staple everything together and cover it with tape**.
+    I feel like experimenting so I'm going to try a more complex method but it is entirely up to you from now on. [Example of binding here](https://www.youtube.com/watch?v=9O4kFTOEh6k&t=359s)
+
+          <img src={photoMessy} alt="Messy booklets on a table" width="400" caption="Watch out. It is easy to mess the order up!" title="Watch out. It is easy to mess the order up!" />
+
+    Folded booklets
+
+    <img
+      src={foldedBooklets}
+      alt="Folded booklets"
+      caption="Folded booklets"
+      title="Folded booklets"
+    />
+
+    Making holes. I'm using a thick needle and a cardboard to mark the spacing
+
+    <img
+      src={photoHoles}
+      alt="Making holes in the booklets"
+      caption="Making holes in the booklets"
+      title="Making holes in the booklets"
+    />
+
+    All of the booklets with holes
+
+    <img
+      src={photoHolesAll}
+      alt="All booklets with holes"
+      caption="All booklets with holes"
+      title="All booklets with holes"
+    />
+
+    Stitched toghether booklets
+
+    <img
+      src={photoStitched}
+      alt="Stitched booklets"
+      caption="Stitched booklets"
+      title="Stitched booklets"
+    />
+
+    Finished product. Ghetto finishing, because i couldn't bother to add a rigid backing. Caution: this makes the book flimsier than it would with a hardback.
+    I'm sorry if I'm not elaboarating on the binding, but that was not the purpose of this document
+
+    <img
+      src={photoFinished}
+      alt="Finished book"
+      caption="Finished book"
+      title="Finished book"
+    />
+
+---
+
+### Why you should do this
+
+- It is fun
+- It is nearly free if you have access to a printer and a stapler
+- You claim your right to knowledge
+- You get new reading material
+
+### Purpose
+
+This is by no means a detailed tutorial on how to bind a book. The purpose of this guide was to show that it is possible for a very large number of individuals to self produce books. I am aware that a lot of binding techniques do exist but the focus of this tutorial was simplicity and efficiency in money usage.
+
+### Contribute
+
+If you feel like this could be made better, send a contribution. I tried using widely accessible and free digital tools to make this.
