@@ -1,5 +1,6 @@
 # Personal portfolio
-
+## 🎨 Design
+Figma Design: [View Design Files](https://www.figma.com/design/lDCCebziR0qbbw37erdyYn/Portfolio-brainstorm?node-id=58-2&t=aAjkigo4qGuFCx44-1)
 ## Tech Stack
 
 - **Frontend**: React, TypeScript
