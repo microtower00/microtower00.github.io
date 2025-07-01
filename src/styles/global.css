@@ -2,9 +2,16 @@
   --primary-color: #1e1e24;
   --secondary-color: #fff;
   --accent-color: #08a4bd;
+  --accent-secondary: #a29f15;
   --text-color: var(--secondary-color);
   --surface-color: var(--primary-color);
   --link-color: var(--accent-color);
+}
+
+@media (max-width: 700px) {
+  #heroImage {
+    display: none !important;
+  }
 }
 
 h1,
@@ -20,7 +27,7 @@ h6 {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 1.5rem;
   font-family: "Courier New", Courier, monospace;
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -43,6 +50,10 @@ body {
     font-size: large;
   }
 }
+
+p {
+  /* margin: 0; */
+}
 .headerLink {
   color: var(--link-color);
   height: 100%;
@@ -58,9 +69,9 @@ body {
   }
 }
 
-.activeHeaderLink {
-  /* background-color: var(--hover-color); */
-}
+/* .activeHeaderLink {
+  background-color: var(--hover-color);
+} */
 
 .hero-section {
   padding: 0 20vw;

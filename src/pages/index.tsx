@@ -1,7 +1,8 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import Header from "../components/layout/Header";
+// import Header from "../components/layout/Header";
 import OpenToWork from "../components/ui/OpenToWork";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -67,17 +68,38 @@ const HeroSectionVar: React.FC = () => {
             maxWidth: "500px",
           }}
         >
-          <h1>CALOGERO MICAZZI</h1>
-          <h1>HCI STUDENT AND FRONTEND DEVELOPER</h1>
-          <p>
-            Facendo pipì mescalinica nel bosco ho realizzato che il filler text
-            è meglio se vomitato direttamente dalla coscienza, e pertanto è
-            quello che ora cerco di fare
+          <h1
+            style={{
+              color: "var(--accent-color)",
+              textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+            }}
+          >
+            MICHELE CAZZARO
+          </h1>
+          <h1 style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
+            HCI STUDENT AND FRONTEND DEVELOPER
+          </h1>
+          <p style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
+            After graduating in Computer Science and working as a fronted
+            software engineer @UNOX, I am now pursuing a MSc degree in
+            Human-Computer Interaction at the University of Trento. I am
+            passionate about creating user-centered designs and improving user
+            experiences through research and design.
           </p>
+          <OpenToWork isOpen />
         </div>
         <HeroImage />
-
-        <OpenToWork isOpen />
+      </div>
+      {/* WIP DIV */}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          padding: "128px 0",
+        }}
+      >
+        <h1>MORE COMING SOON</h1>
       </div>
     </>
   );
@@ -87,9 +109,11 @@ interface HeroImageProps {
   imageUrl?: string;
 }
 
-const HeroImage: React.FC<HeroImageProps> = ({
-  imageUrl = "https://picsum.photos/500/300",
-}) => {
+const HeroImage: React.FC<HeroImageProps> = (
+  {
+    // imageUrl = "https://picsum.photos/500/300",
+  }
+) => {
   return (
     <div
       id="heroImage"
@@ -104,8 +128,8 @@ const HeroImage: React.FC<HeroImageProps> = ({
         justifyContent: "end",
       }}
     >
-      <img
-        src={imageUrl}
+      {/* <img
+        src={ItsMe}
         alt="Hero"
         style={{
           width: "100%",
@@ -113,10 +137,21 @@ const HeroImage: React.FC<HeroImageProps> = ({
           borderRadius: "8px",
           objectFit: "cover",
         }}
-      ></img>
+      ></img> */}
+      <StaticImage
+        src="../images/IMG_1564.JPG"
+        alt="Hero"
+        style={{
+          width: "100%",
+          height: "auto",
+          borderRadius: "8px",
+          objectFit: "cover",
+        }}
+        placeholder="blurred"
+      />
     </div>
   );
 };
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <title>Michele Cazzaro</title>;
