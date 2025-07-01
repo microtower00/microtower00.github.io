@@ -1,29 +1,124 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --primary-color: #1e1e24;
+  --secondary-color: #fff;
+  --accent-color: #08a4bd;
+  --accent-secondary: #a29f15;
+  --text-color: var(--secondary-color);
+  --surface-color: var(--primary-color);
+  --link-color: var(--accent-color);
+}
+
+@media (max-width: 700px) {
+  #heroImage {
+    display: none !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Departure Mono", Courier, monospace;
+  color: var(--text-color);
+}
 
 body {
   margin: 0;
+  padding: 1.5rem;
   font-family: "Courier New", Courier, monospace;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 16px;
 }
 
+.header {
+  width: 100%;
+  background-color: var(--secondary-color);
+  font-family: "Departure Mono", Courier, monospace;
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    height: 64px;
+    margin: 0;
+    padding: 0px 16px;
+    justify-content: end;
+    color: white;
+    font-size: large;
+  }
+}
+
+p {
+  /* margin: 0; */
+}
 .headerLink {
-  border-color: white;
-  border-radius: 8px;
-  color: white;
-  border-width: 1px;
+  color: var(--link-color);
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   a {
-    text-decoration: none;
     padding: 16px;
-    border: 1px solid white;
-    border-radius: 8px;
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+    /* &:hover {
+      background-color: var(--hover-color);
+    } */
     transition: background-color 0.3s ease;
+  }
+}
+
+/* .activeHeaderLink {
+  background-color: var(--hover-color);
+} */
+
+.hero-section {
+  padding: 0 20vw;
+  display: flex;
+  height: calc(100vh - 64px);
+  background-color: var(--primary-color);
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    width: 50%;
+    font-size: 44px;
+    font-weight: 500;
+  }
+}
+
+.accentColor {
+  color: var(--accent-color);
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+/* BLOG */
+.blog-post-style {
+  line-height: 1.7;
+  img {
+    display: block;
+    width: 90%;
+    max-height: 80vh;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  pre {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "Courier New", Courier, monospace;
+  }
+  code {
+    font-style: italic;
+    font-size: inherit;
   }
 }

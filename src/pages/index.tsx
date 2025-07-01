@@ -1,159 +1,157 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import Header from "../components/layout/Header";
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-const headingAccentStyles = {
-  color: "#663399",
-};
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-};
-const doclistStyles = {
-  paddingLeft: 0,
-};
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-};
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-};
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-};
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-};
-
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  },
-];
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-};
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-];
+// import Header from "../components/layout/Header";
+import OpenToWork from "../components/ui/OpenToWork";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div
-      style={{
-        fontSize: "48px",
-        fontWeight: "bold",
-        textAlign: "center",
-        width: "100%",
-        height: "100vh",
-        lineHeight: "100vh",
-      }}
-    >
-      WIP
-    </div>
+    <>
+      {/* <Header /> */}
+      <main>
+        <HeroSectionVar />
+        {/* <HeroSection /> */}
+      </main>
+    </>
   );
 };
 
+// const HeroSection: React.FC = () => {
+//   return (
+//     <section className="hero-section">
+//       <h2 style={{}}>
+//         I'M <span className="accentColor bolded">MICHELE CAZZARO</span>, A
+//         <span className="bolded"> FRONTEND</span> SW ENGINEER TURNED{" "}
+//         <span className="bolded">UX</span> DESIGNER AND{" "}
+//         <span className="bolded">RESEARCHER</span>
+//       </h2>
+//       <p
+//       // Trying out new font
+//       // style={{
+//       //   fontFamily: "Outfit, Courier, monospace",
+//       //   fontSize: "28px",
+//       //   textAlign: "left", // Fixed textAlign type
+//       // }}
+//       >
+//         figatoma UniTN lorem ipsum dolor sit amet, consectetur adipiscing elit,
+//         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem
+//         ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+//         incididunt ut labore et dolore magna aliqua.{" "}
+//         <span className="accentColor">figatoma</span> UniTN lorem ipsum dolor
+//         sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+//         ut labore et dolore magna aliqua. lorem ipsum dolor sit amet,
+//         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+//         et dolore magna aliqua.{" "}
+//       </p>
+//     </section>
+//   ); // Fixed textAlign type
+// };
+
+const HeroSectionVar: React.FC = () => {
+  return (
+    <>
+      <div
+        id="heroContainer"
+        style={{
+          margin: "0 auto",
+          maxWidth: "750px",
+          position: "relative",
+        }}
+      >
+        <div
+          id="whoAmI"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+            marginTop: "64px",
+            maxWidth: "500px",
+          }}
+        >
+          <h1
+            style={{
+              color: "var(--accent-color)",
+              textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+            }}
+          >
+            MICHELE CAZZARO
+          </h1>
+          <h1 style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
+            HCI STUDENT AND FRONTEND DEVELOPER
+          </h1>
+          <p style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
+            After graduating in Computer Science and working as a fronted
+            software engineer @UNOX, I am now pursuing a MSc degree in
+            Human-Computer Interaction at the University of Trento. I am
+            passionate about creating user-centered designs and improving user
+            experiences through research and design.
+          </p>
+          <OpenToWork isOpen />
+        </div>
+        <HeroImage />
+      </div>
+      {/* WIP DIV */}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          padding: "128px 0",
+        }}
+      >
+        <h1>MORE COMING SOON</h1>
+      </div>
+    </>
+  );
+};
+
+interface HeroImageProps {
+  imageUrl?: string;
+}
+
+const HeroImage: React.FC<HeroImageProps> = (
+  {
+    // imageUrl = "https://picsum.photos/500/300",
+  }
+) => {
+  return (
+    <div
+      id="heroImage"
+      style={{
+        zIndex: -1,
+        position: "absolute",
+        width: "40%",
+        height: "100%",
+        top: "0",
+        right: "0",
+        display: "flex",
+        justifyContent: "end",
+      }}
+    >
+      {/* <img
+        src={ItsMe}
+        alt="Hero"
+        style={{
+          width: "100%",
+          height: "auto",
+          borderRadius: "8px",
+          objectFit: "cover",
+        }}
+      ></img> */}
+      <StaticImage
+        src="../images/IMG_1564.JPG"
+        alt="Hero"
+        style={{
+          width: "100%",
+          height: "auto",
+          borderRadius: "8px",
+          objectFit: "cover",
+        }}
+        placeholder="blurred"
+      />
+    </div>
+  );
+};
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <title>Michele Cazzaro</title>;

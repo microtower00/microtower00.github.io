@@ -1,3 +1,9 @@
 {
-  "conventionalCommits.scopes": ["nav", "site"]
+  "conventionalCommits.scopes": [
+    "nav",
+    "site",
+    "pages",
+    "md-page-gen",
+    "content"
+  ]
 }
