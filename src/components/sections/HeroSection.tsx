@@ -46,17 +46,6 @@ const HeroSection: React.FC = () => {
         </div>
         <HeroImage />
       </div>
-      {/* WIP DIV */}
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          padding: "128px 0",
-        }}
-      >
-        <h1>MORE COMING SOON</h1>
-      </div>
     </>
   );
 };
