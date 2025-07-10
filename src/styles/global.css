@@ -17,7 +17,57 @@
   }
 }
 /* Variables */
+.heroXL {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 36px;
+  line-height: 125%;
+}
 
+.hedingL {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+.headingM {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 16px;
+  line-height: 133%;
+}
+
+.label {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.bodyBlog {
+  font-family: "Satoshi", "Courier New", Courier, monospace;
+  font-size: 20px;
+  line-height: 175%;
+}
+
+.bodyL {
+  font-family: "Satoshi", "Courier New", Courier, monospace;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.bodyM {
+  font-family: "Satoshi", "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 133%;
+}
+
+.bodyS {
+  font-family: "Satoshi", "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 133%;
+}
+
+* {
+  font-family: "Satoshi", "Courier New", Courier, monospace;
+}
 h1,
 h2,
 h3,
@@ -25,7 +75,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-family: "Departure Mono", Courier, monospace;
+  font-family: "VCR OSD Mono", Courier, monospace;
   color: var(--text-color);
 }
 
@@ -55,7 +105,7 @@ body {
 .header {
   width: 100%;
   background-color: var(--secondary-color);
-  font-family: "Departure Mono", Courier, monospace;
+  font-family: "VCR OSD Mono", Courier, monospace;
   ul {
     display: flex;
     gap: 1rem;

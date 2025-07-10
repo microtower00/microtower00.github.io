@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Departure Mono";
   src: url("/fonts/DepartureMono-Regular.woff2") format("woff2"),
     url("/fonts/DepartureMono-Regular.woff") format("woff"),
@@ -6,4 +6,11 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+} */
+
+@font-face {
+  font-family: "VCR OSD Mono";
+  src: url("/fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
 }
+
+@import "./satoshi.css";
