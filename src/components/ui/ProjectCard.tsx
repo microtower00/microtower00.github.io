@@ -1,5 +1,5 @@
 import React from "react";
-import { Project } from "../sections/ProjectsList";
+import { Project } from "../../pages";
 
 interface ProjectCardProps {
   project: Project;

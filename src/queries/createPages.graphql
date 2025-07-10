@@ -1,0 +1,26 @@
+query CreatePagesQuery {
+  allMdx(
+    filter: {
+      internal: { contentFilePath: { regex: "/content/(blog|projects)/" } }
+    }
+  ) {
+    nodes {
+      id
+      internal {
+        contentFilePath
+      }
+      frontmatter {
+        title
+        date
+        slug
+        tags
+        link
+        public
+        description
+        details
+        imageSrc
+        imageAlt
+      }
+    }
+  }
+}

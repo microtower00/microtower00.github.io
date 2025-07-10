@@ -1,54 +1,57 @@
 import path from "path";
+import fs from "fs";
 import { GatsbyNode } from "gatsby";
-type QueryResult = {
-  allMdx: {
-    nodes: {
-      id: string;
-      internal: {
-        contentFilePath: string;
-      };
-      frontmatter: {
-        slug: string;
-        public?: boolean;
-      };
-    }[];
-  };
-};
-
+import type { CreatePagesQueryQuery } from "../portfolio/src/__generated__/gatsby-types";
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
   actions,
 }) => {
   const { createPage } = actions;
 
-  const result = await graphql(`
-    query CreatePagesQuery {
-      allMdx(
-        filter: {
-          internal: { contentFilePath: { regex: "/content/(blog|projects)/" } }
-        }
-      ) {
-        nodes {
-          id
-          internal {
-            contentFilePath
-          }
-          frontmatter {
-            slug
-            public
-          }
-        }
-      }
-    }
-  `);
+  const queryPath = path.resolve(
+    __dirname,
+    "../src/queries/createPages.graphql"
+  );
+  const query = fs.readFileSync(queryPath, "utf-8");
+  const result = await graphql(query);
 
   if (result.errors) throw result.errors;
 
-  const data = result.data as QueryResult;
+  const data = result.data as CreatePagesQueryQuery;
 
   data.allMdx.nodes.forEach((node) => {
-    if (node.frontmatter.public === false) return;
+    if (node.frontmatter?.public === false) return;
+
+    const fm = node.frontmatter;
+
+    if (!fm?.slug || typeof fm.slug !== "string" || !fm.slug.trim()) {
+      throw new Error(
+        `Missing or invalid 'slug' in frontmatter of file: ${node.internal.contentFilePath}`
+      );
+    }
+
+    if (
+      !fm.description ||
+      typeof fm.description !== "string" ||
+      !fm.description.trim()
+    ) {
+      throw new Error(
+        `Missing or invalid 'description' in frontmatter of file: ${node.internal.contentFilePath}`
+      );
+    }
+
+    if (
+      !fm.imageSrc ||
+      typeof fm.imageSrc !== "string" ||
+      !fm.imageSrc.trim()
+    ) {
+      throw new Error(
+        `Missing or invalid 'imageSrc' in frontmatter of file: ${node.internal.contentFilePath}`
+      );
+    }
+    if (!node.frontmatter?.public) return;
     const filePath = node.internal.contentFilePath;
+    if (!filePath) throw new Error("Missing contentFilePath");
     const isBlog = /\/blog\//.test(filePath);
     const pathPrefix = isBlog ? "blog" : "projects";
     const relativePath = path.relative(
@@ -59,7 +62,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
     const fmSlug = node.frontmatter?.slug;
 
-    // Fail build if slug is missing or empty
     if (!fmSlug || typeof fmSlug !== "string" || !fmSlug.trim()) {
       throw new Error(
         `Missing or invalid 'slug' in frontmatter of file: ${filePath}`

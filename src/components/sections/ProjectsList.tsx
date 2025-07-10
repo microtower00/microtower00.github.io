@@ -1,15 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import ProjectCard from "../ui/ProjectCard";
-
-export type Project = {
-  id: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    slug: string;
-  };
-};
+import { Project } from "../../pages";
 
 type ProjectListProps = {
   projects: Project[];
