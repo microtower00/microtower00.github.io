@@ -249,13 +249,10 @@ p {
   animation: flashGlow 0.5s ease-in-out forwards;
 
   .project-card-image-container {
-    padding: 0 0 8px 0;
-    transition: padding 0.15s ease;
+    transform: scale(1.09);
   }
   .project-card-image {
     border-radius: 16px 16px 0 0;
-    height: 208px;
-    transition: height 0.15s ease, border-radius 0.15s ease;
   }
 }
 
@@ -281,6 +278,7 @@ p {
 
 .project-card-image-container {
   padding: 8px;
+  transition: transform 0.15s ease;
 }
 
 .project-card-image {
@@ -288,6 +286,7 @@ p {
   background: #4b4b4b;
   border-radius: 8px;
   border: 1px solid #262626;
+  transition: border-radius 0.15s ease;
 }
 
 .project-card-content {
