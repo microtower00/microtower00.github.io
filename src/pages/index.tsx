@@ -8,7 +8,6 @@ export type Project = {
   id: string;
   frontmatter: {
     title: string;
-    date: string;
     slug: string;
   };
 };
@@ -37,7 +36,6 @@ export const Head: HeadFC = () => <title>Michele Cazzaro</title>;
 export const query = graphql`
   query HomeProjectsQuery {
     allMdx(
-      sort: { frontmatter: { date: DESC } }
       filter: {
         internal: { contentFilePath: { regex: "/content/projects/" } }
         frontmatter: { public: { ne: false } }
@@ -48,7 +46,6 @@ export const query = graphql`
         id
         frontmatter {
           title
-          date
           slug
         }
       }

@@ -8,7 +8,6 @@ type BlogPostProps = {
     mdx: {
       frontmatter: {
         title: string;
-        date: string;
         tags?: string[];
       };
       body: string;

@@ -9,7 +9,6 @@ type BlogListProps = {
         id: string;
         frontmatter: {
           title: string;
-          date: string;
           slug: string;
           public: boolean;
         };
@@ -44,7 +43,6 @@ export default function BlogPage({ data }: BlogListProps) {
 export const query = graphql`
   query BlogIndexQuery {
     allMdx(
-      sort: { frontmatter: { date: DESC } }
       filter: {
         internal: { contentFilePath: { regex: "/content/blog/" } }
         frontmatter: { public: { ne: false } }
@@ -54,7 +52,6 @@ export const query = graphql`
         id
         frontmatter {
           title
-          date
           slug
         }
       }

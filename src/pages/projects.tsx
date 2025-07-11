@@ -9,7 +9,6 @@ type ProjectListProps = {
         id: string;
         frontmatter: {
           title: string;
-          date: string;
           slug: string;
           public: boolean;
         };
@@ -44,7 +43,6 @@ export default function ProjectsPage({ data }: ProjectListProps) {
 export const query = graphql`
   query ProjectsIndexQuery {
     allMdx(
-      sort: { frontmatter: { date: DESC } }
       filter: {
         internal: { contentFilePath: { regex: "/content/projects/" } }
         frontmatter: { public: { ne: false } }
@@ -54,7 +52,6 @@ export const query = graphql`
         id
         frontmatter {
           title
-          date
           slug
         }
       }
