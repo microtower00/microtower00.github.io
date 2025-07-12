@@ -4,7 +4,7 @@ import ProjectList from "../components/sections/ProjectsList";
 import { graphql } from "gatsby";
 import HeroSection from "../components/sections/HeroSection";
 
-type Project = {
+export type Project = {
   id: string;
   frontmatter: {
     title: string;
@@ -50,6 +50,7 @@ export const query = graphql`
           title
           date
           slug
+          public
         }
       }
     }

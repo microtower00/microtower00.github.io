@@ -25,7 +25,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "developTest": "npx gatsby develop -H 0.0.0.0 -p 8000"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
