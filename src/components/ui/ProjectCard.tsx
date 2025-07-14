@@ -1,17 +1,20 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Project } from "../../pages";
+import { Project } from "../../types/frontmatter";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  // Extract the processed image data
+  // Extract the processed image data safely, handling both string and object cases
   const imageData =
-    project.frontmatter.imageSrc?.childImageSharp?.gatsbyImageData;
+    typeof project.frontmatter.imageSrc === "object" &&
+    project.frontmatter.imageSrc?.childImageSharp
+      ? project.frontmatter.imageSrc.childImageSharp.gatsbyImageData
+      : undefined;
   return (
-    <div className="project-card">
+    <a href={project.frontmatter.slug} className="project-card">
       <div className="project-card-image-container">
         <div className="project-card-image">
           {imageData ? (
@@ -54,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.frontmatter.details}&nbsp;
         </p>
       </div>
-    </div>
+    </a>
   );
 };
 

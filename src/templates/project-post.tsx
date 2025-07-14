@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import Header from "../components/layout/Header";
+import LatestProjects from "../components/sections/LatestProjects";
 
 type ProjectPostProps = {
   data: {
@@ -28,6 +29,7 @@ const projectComponents = {
 
 export default function ProjectPost({ data, children }: ProjectPostProps) {
   const { title, tags } = data.mdx.frontmatter;
+  const id = (data as any).mdx.id;
 
   return (
     <>
@@ -47,6 +49,7 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
           </ul>
         )}
         <MDXProvider components={projectComponents}>{children}</MDXProvider>
+        <LatestProjects excludeId={id} />
       </main>
     </>
   );
@@ -55,6 +58,7 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
 export const query = graphql`
   query ProjectPostById($id: String!) {
     mdx(id: { eq: $id }) {
+      id
       frontmatter {
         title
         tags

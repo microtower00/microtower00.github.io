@@ -2,15 +2,12 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import Header from "../components/layout/Header";
+import { Frontmatter } from "../types/frontmatter";
 
 type BlogPostProps = {
   data: {
     mdx: {
-      frontmatter: {
-        title: string;
-        date: string;
-        tags?: string[];
-      };
+      frontmatter: Frontmatter;
       body: string;
       children?: React.ReactNode;
     };

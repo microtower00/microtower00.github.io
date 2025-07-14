@@ -1,14 +1,13 @@
 import { useState } from "react";
 import * as React from "react";
-import { FaClipboard } from "react-icons/fa";
 import SquareButton from "./SquareButton";
+import { Copy, Mail, MailPlus } from "lucide-react";
 
 interface OpenToWorkProps {
   isOpen: boolean;
 }
 
 const COLORS = {
-  open: "var(--green-accent)",
   closed: "#FFA500",
 };
 
@@ -32,7 +31,7 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "8px",
+        gap: "12px",
       }}
     >
       <p
@@ -43,7 +42,6 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
           gap: "8px",
           color: isOpen ? "var(--green-accent)" : COLORS.closed,
           textTransform: "uppercase",
-          fontFamily: "Departure Mono",
         }}
       >
         <span
@@ -53,11 +51,11 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
             width: "6px",
             borderRadius: "50%",
             backgroundColor: isOpen ? "var(--green-accent)" : COLORS.closed,
-            boxShadow: isOpen ? `0 0 10px var(--green-accent)` : "none",
+            boxShadow: isOpen ? `5px 5px 20px var(--green-accent)` : "none",
             animation: isOpen ? "simpleGlow 2s ease-in-out infinite" : "none",
           }}
         ></span>
-        <span>
+        <span className="label" style={{ fontSize: "20px" }}>
           {isOpen
             ? "Currently open to new work."
             : "Currently not taking on any new work."}
@@ -65,14 +63,20 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
       </p>
       <div
         className="openToWorkEmail"
-        style={{ display: "flex", flexDirection: "row", padding: "4px" }}
+        style={{ display: "flex", flexDirection: "row" }}
       >
         <div
           className="buttons"
           style={{ display: "flex", flexDirection: "row", gap: "8px" }}
         >
-          <SquareButton></SquareButton>
-          <SquareButton></SquareButton>
+          <SquareButton
+            lucideIcon={MailPlus}
+            href="mailto:microtower00@gmail.com"
+          ></SquareButton>
+          <SquareButton
+            lucideIcon={Copy}
+            onAction={handleCopyEmail}
+          ></SquareButton>
         </div>
         <div
           id="email"
@@ -86,9 +90,8 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
           }}
           onClick={handleCopyEmail}
         >
-          {/* <FaClipboard /> */}
-          <p style={{ textDecoration: "underline dashed", marginRight: "8px" }}>
-            microtower00@gmail.com
+          <p style={{ textDecoration: "underline dashed", margin: "0" }}>
+            Email me!{" "}
           </p>
 
           {modalVisible && (
@@ -135,10 +138,10 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
         {`
           @keyframes simpleGlow {
             0%, 100% {
-              box-shadow: 0 0 5px ${COLORS.open};
+              box-shadow: 0 0 5px var(--green-accent);
             }
             50% {
-              box-shadow: 0 0 20px ${COLORS.open};
+              box-shadow: 0 0 30px var(--green-accent);
             }
           }
 

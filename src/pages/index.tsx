@@ -3,35 +3,9 @@ import type { HeadFC, PageProps } from "gatsby";
 import ProjectList from "../components/sections/ProjectsList";
 import { graphql } from "gatsby";
 import HeroSection from "../components/sections/HeroSection";
-
-interface ProjectFrontmatter {
-  title: string;
-  date: string;
-  slug: string;
-  public: boolean;
-  description: string;
-  imageSrc?: {
-    childImageSharp?: {
-      gatsbyImageData: any;
-    };
-  };
-  imageAlt?: string;
-  details: string;
-}
-
-export interface Project {
-  id: string;
-  frontmatter: ProjectFrontmatter;
-}
-
-type HomeProjectsQueryData = {
-  allMdx: {
-    nodes: Project[];
-  };
-};
+import { HomeProjectsQueryData } from "../types/frontmatter";
 
 const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
-  console.log(data.allMdx.nodes[1].frontmatter);
   return (
     <>
       <main className="main" style={{}}>
@@ -52,9 +26,8 @@ export const query = graphql`
       sort: { frontmatter: { date: DESC } }
       filter: {
         internal: { contentFilePath: { regex: "/content/projects/" } }
-        frontmatter: { public: { ne: false } }
+        frontmatter: { public: { eq: true } }
       }
-      limit: 3
     ) {
       nodes {
         id
@@ -64,6 +37,7 @@ export const query = graphql`
           slug
           public
           description
+          date
           imageSrc {
             childImageSharp {
               gatsbyImageData(

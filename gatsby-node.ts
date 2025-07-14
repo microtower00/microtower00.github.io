@@ -57,6 +57,7 @@ const CREATE_PAGES_QUERY = `
           slug
           public
           description
+          date
           imageSrc {
             relativePath
             childImageSharp {
@@ -74,46 +75,36 @@ const CREATE_PAGES_QUERY = `
   }
 ` as const;
 
+// Helper function to validate required string fields
+function validateRequiredStringField(
+  fieldValue: any,
+  fieldName: string,
+  filePath: string
+) {
+  if (!fieldValue || typeof fieldValue !== "string" || !fieldValue.trim()) {
+    throw new Error(
+      `Missing or invalid '${fieldName}' in frontmatter of file: ${filePath}`
+    );
+  }
+}
+
 // Validation function with strong typing
-function validateFrontmatter(frontmatter: Frontmatter, filePath: string): void {
-  // Validate title
-  if (
-    !frontmatter.title ||
-    typeof frontmatter.title !== "string" ||
-    !frontmatter.title.trim()
-  ) {
-    throw new Error(
-      `Missing or invalid 'title' in frontmatter of file: ${filePath}`
-    );
-  }
+function validateFrontmatter(
+  frontmatter: Frontmatter,
+  filePath: string,
+  isBlog: boolean
+): void {
+  // Common required fields
+  ["title", "slug", "description", "date"].forEach((field) => {
+    validateRequiredStringField((frontmatter as any)[field], field, filePath);
+  });
 
-  // Validate slug
-  if (
-    !frontmatter.slug ||
-    typeof frontmatter.slug !== "string" ||
-    !frontmatter.slug.trim()
-  ) {
-    throw new Error(
-      `Missing or invalid 'slug' in frontmatter of file: ${filePath}`
-    );
-  }
-
-  // Validate description
-  if (
-    !frontmatter.description ||
-    typeof frontmatter.description !== "string" ||
-    !frontmatter.description.trim()
-  ) {
-    throw new Error(
-      `Missing or invalid 'description' in frontmatter of file: ${filePath}`
-    );
-  }
-
-  // Validate imageSrc - now it's an object with childImageSharp
-  if (!frontmatter.imageSrc || !frontmatter.imageSrc.childImageSharp) {
-    throw new Error(
-      `Missing or invalid 'imageSrc' in frontmatter of file: ${filePath}`
-    );
+  // Project-specific validation
+  if (!isBlog) {
+    // Optionally validate imageSrc for projects (uncomment if needed)
+    // if (!frontmatter.imageSrc || !frontmatter.imageSrc.childImageSharp) {
+    //   throw new Error(`Missing or invalid 'imageSrc' in frontmatter of file: ${filePath}`);
+    // }
   }
 }
 
@@ -136,67 +127,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const filePath = node.internal.contentFilePath;
     const isBlog = /\/blog\//.test(filePath);
 
-    // Only validate imageSrc for projects, not blog posts
-    if (isBlog) {
-      // For blog posts, only validate title, slug, and description
-      if (
-        !node.frontmatter.title ||
-        typeof node.frontmatter.title !== "string" ||
-        !node.frontmatter.title.trim()
-      ) {
-        throw new Error(
-          `Missing or invalid 'title' in frontmatter of file: ${filePath}`
-        );
-      }
-      if (
-        !node.frontmatter.slug ||
-        typeof node.frontmatter.slug !== "string" ||
-        !node.frontmatter.slug.trim()
-      ) {
-        throw new Error(
-          `Missing or invalid 'slug' in frontmatter of file: ${filePath}`
-        );
-      }
-      if (
-        !node.frontmatter.description ||
-        typeof node.frontmatter.description !== "string" ||
-        !node.frontmatter.description.trim()
-      ) {
-        throw new Error(
-          `Missing or invalid 'description' in frontmatter of file: ${filePath}`
-        );
-      }
-    } else {
-      // For projects, validate all fields except imageSrc for now
-      if (
-        !node.frontmatter.title ||
-        typeof node.frontmatter.title !== "string" ||
-        !node.frontmatter.title.trim()
-      ) {
-        throw new Error(
-          `Missing or invalid 'title' in frontmatter of file: ${filePath}`
-        );
-      }
-      if (
-        !node.frontmatter.slug ||
-        typeof node.frontmatter.slug !== "string" ||
-        !node.frontmatter.slug.trim()
-      ) {
-        throw new Error(
-          `Missing or invalid 'slug' in frontmatter of file: ${filePath}`
-        );
-      }
-      if (
-        !node.frontmatter.description ||
-        typeof node.frontmatter.description !== "string" ||
-        !node.frontmatter.description.trim()
-      ) {
-        throw new Error(
-          `Missing or invalid 'description' in frontmatter of file: ${filePath}`
-        );
-      }
-      // Skip imageSrc validation for now
-    }
+    // Unified validation
+    validateFrontmatter(node.frontmatter, filePath, isBlog);
 
     if (!node.frontmatter?.public) return;
 

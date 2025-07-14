@@ -47,7 +47,7 @@ export const query = graphql`
       sort: { frontmatter: { date: DESC } }
       filter: {
         internal: { contentFilePath: { regex: "/content/projects/" } }
-        frontmatter: { public: { ne: false } }
+        frontmatter: { public: { eq: true } }
       }
     ) {
       nodes {

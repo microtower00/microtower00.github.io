@@ -235,11 +235,16 @@ p {
 }
 
 /* PROJECT CARD */
+
+a.project-card {
+  text-decoration: none;
+}
+
 .project-card {
   flex: 1 1 300px;
   width: 100%;
   max-width: 392px;
-  min-width: 0px;
+  /* min-width: 0px; */
   height: 100%;
   overflow: hidden;
   border-radius: 16px;
@@ -279,7 +284,12 @@ p {
 
 @media (max-width: 500px) {
   .project-card {
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
+    margin: 0 auto;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -308,6 +318,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 88.8px;
 }
 
 .project-card-title {
@@ -350,16 +361,19 @@ p {
 /* PROJECTS LIST */
 .projects-list {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
   max-width: 1208px;
   gap: 16px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* justify-content: flex-start; */
 }
 
 @media (max-width: 1680px) {
   .projects-list {
     max-width: 800px !important;
+    grid-template-columns: 1fr 1fr;
   }
 }
