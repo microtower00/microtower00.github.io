@@ -2,21 +2,34 @@ import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Project } from "../../types/frontmatter";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   project: Project;
+  compact?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  // Extract the processed image data safely, handling both string and object cases
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, compact }) => {
   const imageData =
     typeof project.frontmatter.imageSrc === "object" &&
     project.frontmatter.imageSrc?.childImageSharp
       ? project.frontmatter.imageSrc.childImageSharp.gatsbyImageData
       : undefined;
   return (
-    <a href={project.frontmatter.slug} className="project-card">
-      <div className="project-card-image-container">
-        <div className="project-card-image">
+    <a
+      href={project.frontmatter.slug}
+      className={compact ? "project-card-compact" : "project-card"}
+    >
+      <div
+        className={
+          compact
+            ? "project-card-compact-image-container"
+            : "project-card-image-container"
+        }
+      >
+        <div
+          className={
+            compact ? "project-card-compact-image" : "project-card-image"
+          }
+        >
           {imageData ? (
             <GatsbyImage
               image={imageData}
@@ -46,7 +59,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           )}
         </div>
       </div>
-      <div className="project-card-content">
+      <div
+        className={
+          compact ? "project-card-compact-content" : "project-card-content"
+        }
+      >
         <div className="project-card-title-desc">
           <h3 className="project-card-title">{project.frontmatter.title}</h3>
           <div className="project-card-description">

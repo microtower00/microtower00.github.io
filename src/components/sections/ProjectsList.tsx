@@ -10,6 +10,7 @@ type ProjectListProps = {
 export default function ProjectList({ projects }: ProjectListProps) {
   return (
     <div
+      id="projects"
       className="projects-list-container"
       style={{ display: "flex", flexDirection: "column", gap: "16px" }}
     >

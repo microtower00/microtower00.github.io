@@ -133,6 +133,20 @@ button {
   outline: none; /* optional */
 }
 
+.buttonLink {
+  color: var(--link-color);
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border: 1px solid var(--border-dark-gray);
+  padding: 8px 16px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--border-dark-gray);
+}
+
 p {
   /* margin: 0; */
 }
@@ -236,7 +250,8 @@ p {
 
 /* PROJECT CARD */
 
-a.project-card {
+a.project-card,
+a.project-card-compact {
   text-decoration: none;
 }
 
@@ -244,7 +259,6 @@ a.project-card {
   flex: 1 1 300px;
   width: 100%;
   max-width: 392px;
-  /* min-width: 0px; */
   height: 100%;
   overflow: hidden;
   border-radius: 16px;
@@ -254,17 +268,39 @@ a.project-card {
   gap: 8px;
   transition: outline 0.15s ease;
 }
+.project-card-compact {
+  /* flex: 1 1 300px; */
+  width: 100%;
+  height: 144px;
+  /* height: 100%; */
+  overflow: hidden;
+  border-radius: 16px;
+  outline: 1px solid #262626;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  transition: outline 0.15s ease;
+}
 
-.project-card:hover {
+.project-card:hover,
+.project-card-compact:hover {
   outline: 2px solid var(--accent-color);
 
   animation: flashGlow 0.5s ease-in-out forwards;
 
-  .project-card-image-container {
+  .project-card-image-container,
+  .project-card-compact-image-container {
+    transform: scale(1.1);
+  }
+  .project-card-image,
+  .project-card-compact-image {
     transform: scale(1.09);
   }
   .project-card-image {
     border-radius: 16px 16px 0 0;
+  }
+  .project-card-compact-image {
+    border-radius: 0px 0px 0px 0;
   }
 }
 
@@ -297,9 +333,22 @@ a.project-card {
   padding: 8px;
   transition: transform 0.15s ease;
 }
+.project-card-compact-image-container {
+  padding: 8px;
+  transition: transform 0.15s ease;
+}
 
 .project-card-image {
   height: 200px;
+  background: #4b4b4b;
+  border-radius: 8px;
+  border: 1px solid #262626;
+  transition: border-radius 0.15s ease;
+}
+
+.project-card-compact-image {
+  height: 128px;
+  width: 128px;
   background: #4b4b4b;
   border-radius: 8px;
   border: 1px solid #262626;
@@ -311,6 +360,20 @@ a.project-card {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.project-card-compact-content {
+  padding: 8px;
+  /* flex: 0; */
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* allow wrapping */
+  word-break: break-word; /* break long words/URLs */
+  max-width: 100%;
 }
 
 .project-card-title-desc {
@@ -376,4 +439,79 @@ a.project-card {
     max-width: 800px !important;
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Latest Projects horizontal flex (default) */
+.latest-projects-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.latest-projects-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.latest-projects {
+  padding: 0 16px;
+  flex: 0 1 100%;
+  max-width: 1208px;
+}
+
+/* Responsive: stack vertically in compact mode at <= 800px */
+@media (max-width: 950px) {
+  .latest-projects-list {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 16px;
+  }
+  .latest-projects-list > .project-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .latest-projects {
+    max-width: 100% !important;
+  }
+}
+
+.fancy-link {
+  position: relative;
+  /* color: var(--accent-color); */
+  text-decoration: none;
+  font-family: "VCR OSD Mono", Courier, monospace;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fancy-link::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--accent-color);
+  transition: transform 0.3s ease, width 0.3s ease, left 0.3s ease,
+    bottom 0.3s ease;
+}
+
+.fancy-link:hover {
+  color: white;
+  /* transform: skewX(-2deg); pseudo-italic if no italic font available */
+}
+
+.fancy-link:hover::after {
+  bottom: -6px;
+  left: 25%;
+  width: 50%;
+  /* transform: translateX(50%); */
 }

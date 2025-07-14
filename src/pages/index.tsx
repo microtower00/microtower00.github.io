@@ -4,13 +4,14 @@ import ProjectList from "../components/sections/ProjectsList";
 import { graphql } from "gatsby";
 import HeroSection from "../components/sections/HeroSection";
 import { HomeProjectsQueryData } from "../types/frontmatter";
+import LatestProjects from "../components/sections/LatestProjects";
 
 const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
   return (
     <>
       <main className="main" style={{}}>
         <HeroSection />
-        <ProjectList projects={data.allMdx.nodes} />{" "}
+        <ProjectList projects={data.allMdx.nodes} /> <LatestProjects />
       </main>
     </>
   );
