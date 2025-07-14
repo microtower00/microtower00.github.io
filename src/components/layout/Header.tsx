@@ -1,59 +1,27 @@
-import { useLocation } from "@reach/router";
+// src/components/layout/SiteHeader.tsx
 import React from "react";
+import FancyLink from "../ui/FancyLink";
 
-const linkList: {
-  [key: string]: string;
-} = {
-  Home: "/",
-  About: "/about",
-  Blog: "/blog",
-  Projects: "/projects",
-};
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+  // Add more as needed
+];
 
-const HeaderLink: React.FC<{
-  to: string;
-  active: boolean;
-  children: React.ReactNode;
-}> = ({ to, active, children }) => {
-  return (
-    <li className="headerLink">
-      <a
-        href={to}
-        className={active ? "activeHeaderLink" : ""}
-        style={{ color: "inherit" }}
-      >
-        {children}
-      </a>
-    </li>
-  );
-};
-
-const Header: React.FC = () => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-
-  return (
-    <header className="header">
-      {/* {console.log("Current Path:", currentPath)} */}
-      <nav>
-        <ul style={{}}>
-          {Object.keys(linkList).map((key) => (
-            <HeaderLink
-              key={key}
-              active={
-                key != "Home"
-                  ? currentPath.includes(linkList[key])
-                  : currentPath === linkList[key]
-              }
-              to={linkList[key]}
-            >
-              {key.toLocaleLowerCase()}
-            </HeaderLink>
-          ))}
-        </ul>
+const SiteHeader: React.FC = () => (
+  <header className="site-header">
+    <div className="site-header-inner">
+      <nav style={{}}>
+        {links.map((link) => (
+          <FancyLink key={link.href} href={link.href}>
+            {link.label}
+          </FancyLink>
+        ))}
       </nav>
-    </header>
-  );
-};
+    </div>
+  </header>
+);
 
-export default Header;
+export default SiteHeader;

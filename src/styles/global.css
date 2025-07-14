@@ -109,21 +109,21 @@ body {
   font-size: 16px;
 }
 
-.header {
+.site-header {
   width: 100%;
-  background-color: var(--secondary-color);
-  font-family: "VCR OSD Mono", Courier, monospace;
-  ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    height: 64px;
-    margin: 0;
-    padding: 0px 16px;
-    justify-content: end;
-    color: white;
-    font-size: large;
-  }
+  background: var(--primary-color);
+}
+.site-header-inner {
+  max-width: 1208px; /* or your main content width */
+  margin: 0 auto;
+  padding: 32px 16px;
+  width: 100%;
+}
+.site-header-inner nav {
+  display: flex;
+  justify-content: right;
+  gap: 32px;
+  width: 100%;
 }
 
 button {
@@ -403,6 +403,7 @@ a.project-card-compact {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
   margin: 0;
 }
@@ -416,6 +417,7 @@ a.project-card-compact {
   padding: 0;
   color: var(--gray-text-color);
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
