@@ -1,4 +1,6 @@
-- [ ] change fonts
-- [ ] change colors
-- [ ] add parametric icon svg for button component
-- [ ] add parametric behavior for button component
+- [x] change fonts
+- [x] change colors
+- [x] add parametric icon svg for button component
+- [x] add parametric behavior for button component
+- [ ] header spacing and link behaviour
+- [ ] remove tags until tags based filtering implemented

@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import HeroSection from "../components/sections/HeroSection";
 import { HomeProjectsQueryData } from "../types/frontmatter";
 import LatestProjects from "../components/sections/LatestProjects";
+import Footer from "../components/layout/Footer";
 
 const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
   return (
@@ -13,6 +14,7 @@ const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
         <HeroSection />
         <ProjectList projects={data.allMdx.nodes} /> <LatestProjects />
       </main>
+      <Footer />
     </>
   );
 };

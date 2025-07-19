@@ -26,7 +26,8 @@ const HeroSection: React.FC = () => {
         >
           <h1
             style={{
-              color: "var(--accent-color)",
+              // color: "var(--accent-color)",
+              color: "var(--green-accent)",
               textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
             }}
           >

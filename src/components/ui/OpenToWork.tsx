@@ -51,8 +51,14 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
             width: "6px",
             borderRadius: "50%",
             backgroundColor: isOpen ? "var(--green-accent)" : COLORS.closed,
-            boxShadow: isOpen ? `5px 5px 20px var(--green-accent)` : "none",
-            animation: isOpen ? "simpleGlow 2s ease-in-out infinite" : "none",
+            boxShadow: isOpen
+              ? `0 0 6px 1px var(--green-accent), 0 0 12px 3px var(--green-accent)`
+              : "none",
+            animation: isOpen ? "simpleGlow 2.5s ease-in-out infinite" : "none",
+            // transition:
+            // "box-shadow 0.3s, background 0.3s, width 0.3s, height 0.3s",
+            // position: "relative",
+            // zIndex: 1,
           }}
         ></span>
         <span className="label" style={{ fontSize: "20px" }}>
@@ -138,10 +144,10 @@ const OpenToWork: React.FC<OpenToWorkProps> = ({ isOpen }) => {
         {`
           @keyframes simpleGlow {
             0%, 100% {
-              box-shadow: 0 0 5px var(--green-accent);
+              box-shadow: 0 0 6px 1px var(--green-accent), 0 0 12px 3px var(--green-accent);
             }
             50% {
-              box-shadow: 0 0 30px var(--green-accent);
+              box-shadow: 0 0 12px 2px var(--green-accent), 0 0 24px 6px rgba(204,255,108,0.35);
             }
           }
 

@@ -12,7 +12,7 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
   const [compact, setCompact] = useState(false);
 
   useEffect(() => {
-    const checkCompact = () => setCompact(window.innerWidth <= 950);
+    const checkCompact = () => setCompact(window.innerWidth < 1001);
     checkCompact();
     window.addEventListener("resize", checkCompact);
     return () => window.removeEventListener("resize", checkCompact);
@@ -82,7 +82,9 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
             <ProjectCard key={project.id} project={project} compact={compact} />
           ))}
         </div>
-        <FancyLink href="/#projects">SEE ALL</FancyLink>
+        <FancyLink href="/#projects" color="var(--green-accent)">
+          SEE ALL
+        </FancyLink>
       </div>
     </section>
   );

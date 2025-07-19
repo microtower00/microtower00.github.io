@@ -25,11 +25,29 @@ export default function ProjectList({ projects }: ProjectListProps) {
       >
         Projects
       </label>
-      <div className="projects-list">
-        {projects.map((project) => {
-          return <ProjectCard key={project.id} project={project} />;
-        })}
-      </div>
+      {projects.length === 0 ? (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "64px 16px",
+            color: "var(--gray-text-color)",
+            fontFamily: "VCR OSD Mono, Courier, monospace",
+            fontSize: "16px",
+            textTransform: "uppercase",
+          }}
+        >
+          Come back to see what I'm cooking!
+        </div>
+      ) : (
+        <div className="projects-list">
+          {projects.map((project) => {
+            return <ProjectCard key={project.id} project={project} />;
+          })}
+        </div>
+      )}
     </div>
   );
 }
