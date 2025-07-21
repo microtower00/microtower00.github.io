@@ -1,13 +1,18 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import ProjectCard from "../ui/ProjectCard";
+import Card, { CardProps } from "../ui/Card";
 import { Project } from "../../types/frontmatter";
+import mockProjects from "../../content/projects/mock-projects.json";
 
 type ProjectListProps = {
   projects: Project[];
 };
 
 export default function ProjectList({ projects }: ProjectListProps) {
+  const hasReal = projects.length > 0;
+  const hasMock = (mockProjects as CardProps[]).length > 0;
+
   return (
     <div
       id="projects"
@@ -25,27 +30,18 @@ export default function ProjectList({ projects }: ProjectListProps) {
       >
         Projects
       </label>
-      {projects.length === 0 ? (
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "64px 16px",
-            color: "var(--gray-text-color)",
-            fontFamily: "VCR OSD Mono, Courier, monospace",
-            fontSize: "16px",
-            textTransform: "uppercase",
-          }}
-        >
+      {!(hasReal || hasMock) ? (
+        <div className="projects-list-empty">
           Come back to see what I'm cooking!
         </div>
       ) : (
         <div className="projects-list">
-          {projects.map((project) => {
-            return <ProjectCard key={project.id} project={project} />;
-          })}
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+          {(mockProjects as CardProps[]).map((mock, i) => (
+            <Card key={i} {...mock} />
+          ))}
         </div>
       )}
     </div>
