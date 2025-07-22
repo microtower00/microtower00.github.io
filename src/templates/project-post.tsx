@@ -6,6 +6,7 @@ import LatestProjects from "../components/sections/LatestProjects";
 import ProjectFrontmatter from "../components/ui/ProjectFrontmatter";
 import { Project } from "../types/frontmatter";
 import TagsList from "../components/ui/TagsList";
+import Footer from "../components/layout/Footer";
 
 type ProjectPostProps = {
   data: {
@@ -78,7 +79,7 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
   const id = project.id;
 
   return (
-    <>
+    <div className="project-post-container">
       <SiteHeader variant="button" />
       <main
         className="project-post-style"
@@ -96,10 +97,10 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
         <div className="project-post-content">
           <MDXProvider components={projectComponents}>{children}</MDXProvider>
         </div>
-
-        <LatestProjects excludeId={id} />
       </main>
-    </>
+      <LatestProjects excludeId={id} />
+      <Footer />
+    </div>
   );
 }
 

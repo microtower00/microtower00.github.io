@@ -12,7 +12,7 @@ const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
     <>
       <main className="main" style={{}}>
         <HeroSection />
-        <ProjectList projects={data.allMdx.nodes} /> <LatestProjects />
+        <ProjectList projects={data.allMdx.nodes} />
       </main>
       <Footer />
     </>

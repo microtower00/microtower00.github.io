@@ -5,9 +5,12 @@
 - [ ] header spacing and link behaviour
 - [ ] remove tags until tags based filtering implemented
 - [ ] fix alignemnt in footer
-      decide post header
-      fix empty post layout
-      merge with main and publish.
-      fix external link icon alignment external card
-      valuta ridurre font nel title della card
-      aggiungere "Soon" icon alle card mockate
+- [ ] decide post header
+- [ ] fix empty post layout
+- [ ] merge with main and publish.
+- [x] fix external link icon alignment external card
+- [x] valuta ridurre font nel title della card
+- [x] aggiungere "Soon" icon alle card mockate
+- [x] fix compact card spacing
+- [x] cambiare animazione per card senza link
+- [x] cambiare spacing card e mettere title in maiusc

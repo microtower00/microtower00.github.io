@@ -10,6 +10,7 @@ export interface CardProps {
   title: string;
   description?: string;
   details?: string;
+  isMock?: boolean;
 }
 
 function isExternalHref(href?: string): boolean {
@@ -30,9 +31,12 @@ const Card: React.FC<CardProps> = ({
   title,
   description,
   details,
+  isMock = false,
 }) => {
   const isExternal = isExternalHref(href);
-  const cardClass = compact ? "project-card-compact" : "project-card";
+  const cardClass =
+    (compact ? "project-card-compact" : "project-card") +
+    (isMock ? " mock-card" : "");
 
   const content = (
     <>
@@ -94,15 +98,10 @@ const Card: React.FC<CardProps> = ({
         }
       >
         <div className="project-card-title-desc">
-          <h3 className="project-card-title">
-            {title}{" "}
-            {isExternal && (
-              <ExternalLink
-                size={16}
-                style={{ marginLeft: 4, verticalAlign: "middle" }}
-              />
-            )}
-          </h3>
+          <div className="titleWrapper">
+            <h3 className="project-card-title">{title} </h3>
+            {isExternal && <ExternalLink size={16} />}
+          </div>
           <div className="project-card-description">
             <p>{description}</p>
           </div>

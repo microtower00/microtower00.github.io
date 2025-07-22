@@ -58,7 +58,7 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
     .filter((p: Project) => p.id !== excludeId)
     .slice(0, 3);
 
-  if (!projects.length) return null;
+  if (!projects.length) return <></>;
 
   return (
     <section

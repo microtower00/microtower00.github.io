@@ -37,11 +37,15 @@ const HeroSection: React.FC = () => {
             HCI STUDENT AND FRONTEND DEVELOPER
           </h1>
           <p style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
-            After graduating in Computer Science and working as a fronted
-            software engineer @UNOX, I am now pursuing a MSc degree in
-            Human-Computer Interaction at the University of Trento. I am
-            passionate about creating user-centered designs and improving user
-            experiences through research and design.
+            After graduating in Computer Science and working as a frontend
+            software engineer @
+            <a href="https://unox.it" target="_blank" rel="noopener noreferrer">
+              UNOX
+            </a>
+            , I am now pursuing a MSc degree in Human-Computer Interaction at
+            the University of Trento. I am passionate about creating
+            user-centered designs and improving user experiences through
+            research and design.
           </p>
           <OpenToWork isOpen />
         </div>

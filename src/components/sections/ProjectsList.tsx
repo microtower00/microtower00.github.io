@@ -40,7 +40,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
             <ProjectCard key={project.id} project={project} />
           ))}
           {(mockProjects as CardProps[]).map((mock, i) => (
-            <Card key={i} {...mock} />
+            <Card key={i} {...mock} isMock={true} />
           ))}
         </div>
       )}
