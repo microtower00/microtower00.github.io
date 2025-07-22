@@ -1,0 +1,19 @@
+[
+  {
+    "href": "https://skitourenguru.ch",
+    "title": "Researching skitourenguru.ch",
+    "description": "I'm in the process of investigating the cognitive load of planning a skitour on skitourenguru.ch",
+    "details": "using Nasa-tlx questionnaire",
+    "imageAlt": "Mock Project One Image",
+    "imageData": { "src": "../images/mocked-proj/skitourenguru.png" },
+    "compact": false
+  },
+  {
+    "title": "Mock Project Two",
+    "description": "Another mock project for UI testing.",
+    "details": "Details for mock project two.",
+    "imageAlt": "Mock Project Two Image",
+    "imageData": null,
+    "compact": false
+  }
+]

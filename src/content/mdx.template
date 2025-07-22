@@ -1,0 +1,12 @@
+---
+title: "Your Project Title"
+date: "2023-10-01"
+slug: "/projects/your-project-slug"
+description: "A short summary of your project."
+public: true
+imageSrc: "./your-project-image.jpg"
+imageAlt: "Description of the project image"
+# details: "Optional: more details about the project"
+tags: ["Cognitive Ergonomics", "Quantitative Research", "Final Project"]
+author: "Michele"
+---

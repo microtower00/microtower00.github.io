@@ -1,62 +1,120 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
-import Header from "../components/layout/Header";
+import SiteHeader from "../components/layout/Header";
+import LatestProjects from "../components/sections/LatestProjects";
+import ProjectFrontmatter from "../components/ui/ProjectFrontmatter";
+import { Project } from "../types/frontmatter";
+import TagsList from "../components/ui/TagsList";
+import Footer from "../components/layout/Footer";
 
 type ProjectPostProps = {
   data: {
-    mdx: {
-      frontmatter: {
-        title: string;
-        tags?: string[];
-      };
-      body: string;
-      children?: React.ReactNode;
-    };
+    mdx: Project;
   };
   children?: React.ReactNode;
 };
 
+// Define custom components for MDX content
 const projectComponents = {
-  h1: (props: any) => (
-    <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }} {...props} />
+  h1: (props: any) => <h1 className="hedingL" {...props} />,
+  h2: (props: any) => <h2 className="hedingL" {...props} />,
+  h3: (props: any) => <h3 className="headingM" {...props} />,
+  h4: (props: any) => <h4 className="headingM" {...props} />,
+  p: (props: any) => <p className="bodyBlog" {...props} />,
+  ul: (props: any) => (
+    <ul
+      className="bodyBlog"
+      style={{ lineHeight: 1.7, margin: "1.2rem 0" }}
+      {...props}
+    />
   ),
-  p: (props: any) => (
-    <p style={{ lineHeight: 1.7, margin: "1.2rem 0" }} {...props} />
+  ol: (props: any) => (
+    <ol
+      className="bodyBlog"
+      style={{ lineHeight: 1.7, margin: "1.2rem 0" }}
+      {...props}
+    />
+  ),
+  li: (props: any) => <li style={{ margin: "0.5rem 0" }} {...props} />,
+  blockquote: (props: any) => (
+    <blockquote
+      className="bodyM"
+      style={{
+        borderLeft: "4px solid var(--accent-color)",
+        paddingLeft: "1rem",
+        margin: "1.5rem 0",
+        fontStyle: "italic",
+      }}
+      {...props}
+    />
+  ),
+  code: (props: any) => (
+    <code
+      style={{
+        backgroundColor: "var(--border-dark-gray)",
+        padding: "0.2rem 0.4rem",
+        borderRadius: "4px",
+        fontFamily: "Courier New, Courier, monospace",
+      }}
+      {...props}
+    />
+  ),
+  pre: (props: any) => (
+    <pre
+      style={{
+        backgroundColor: "var(--border-dark-gray)",
+        padding: "1rem",
+        borderRadius: "8px",
+        overflowX: "auto",
+        margin: "1.5rem 0",
+      }}
+      {...props}
+    />
   ),
 };
 
 export default function ProjectPost({ data, children }: ProjectPostProps) {
-  const { title, tags } = data.mdx.frontmatter;
+  const project = data.mdx;
+  const id = project.id;
 
   return (
-    <>
-      <Header />
+    <div className="project-post-container">
+      <SiteHeader variant="button" />
       <main
         className="project-post-style"
-        style={{ maxWidth: "680px", margin: "0 auto", padding: "2rem" }}
+        style={{
+          maxWidth: "700px",
+          margin: "0 auto",
+          padding: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "32px",
+        }}
       >
-        <h1>{title}</h1>
-        {tags && tags.length > 0 && (
-          <ul className="flex flex-wrap gap-2 mt-2 mb-6 text-sm text-blue-700">
-            {tags.map((tag) => (
-              <li key={tag} className="bg-blue-100 px-2 py-1 rounded">
-                {tag}
-              </li>
-            ))}
-          </ul>
-        )}
-        <MDXProvider components={projectComponents}>{children}</MDXProvider>
+        <h1>{project.frontmatter.title}</h1>
+        <ProjectFrontmatter project={project} />
+        <div className="project-post-content">
+          <MDXProvider components={projectComponents}>{children}</MDXProvider>
+        </div>
       </main>
-    </>
+      <LatestProjects excludeId={id} />
+      <Footer />
+    </div>
   );
 }
 
 export const query = graphql`
   query ProjectPostById($id: String!) {
     mdx(id: { eq: $id }) {
+      id
       frontmatter {
         title
+        date
+        description
+        details
+        slug
+        public
         tags
       }
     }
