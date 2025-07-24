@@ -16,6 +16,9 @@
   #heroImage {
     display: none !important;
   }
+  #heroImageOverlay {
+    display: none !important;
+  }
 }
 /* Variables */
 .heroXL {

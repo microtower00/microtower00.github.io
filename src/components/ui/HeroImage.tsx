@@ -4,16 +4,28 @@ import React, { useEffect, useState, useRef } from "react";
 interface HeroImageProps {
   imageUrl?: string;
   blurred?: boolean;
+  onEntranceComplete?: () => void;
 }
 
-const HeroImage: React.FC<HeroImageProps> = ({ blurred = false }) => {
+const ENTRANCE_DURATION = 600; // ms, match your entrance animation duration
+
+const HeroImage: React.FC<HeroImageProps> = ({
+  blurred = false,
+  onEntranceComplete,
+}) => {
   const [animate, setAnimate] = useState(false);
   const [unblurAnim, setUnblurAnim] = useState(false);
   const prevBlurred = useRef(blurred);
+  const entranceDone = useRef(false);
 
   useEffect(() => {
     setAnimate(true);
-  }, []);
+    const timeout = setTimeout(() => {
+      entranceDone.current = true;
+      if (onEntranceComplete) onEntranceComplete();
+    }, ENTRANCE_DURATION);
+    return () => clearTimeout(timeout);
+  }, [onEntranceComplete]);
 
   useEffect(() => {
     if (prevBlurred.current && !blurred) {

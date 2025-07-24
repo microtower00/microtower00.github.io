@@ -6,6 +6,7 @@ import { Eye as LucideEye } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   const [isBlurred, setIsBlurred] = useState(true);
+  const [imageReady, setImageReady] = useState(false);
 
   return (
     <div
@@ -52,9 +53,13 @@ const HeroSection: React.FC = () => {
         </p>
         <OpenToWork isOpen />
       </div>
-      <HeroImage blurred={isBlurred} />
-      {isBlurred && (
+      <HeroImage
+        blurred={isBlurred}
+        onEntranceComplete={() => setImageReady(true)}
+      />
+      {isBlurred && imageReady && (
         <div
+          id="heroImageOverlay"
           style={{
             position: "absolute",
             right: 0,
