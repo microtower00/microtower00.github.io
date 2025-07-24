@@ -1,19 +1,16 @@
 [
   {
-    "href": "https://skitourenguru.ch",
-    "title": "Researching skitourenguru.ch",
-    "description": "I'm in the process of investigating the cognitive load of planning a skitour on skitourenguru.ch",
-    "details": "using Nasa-tlx questionnaire",
-    "imageAlt": "Mock Project One Image",
-    "imageData": { "src": "../images/mocked-proj/skitourenguru.png" },
-    "compact": false
+    "title": "Portfolio website",
+    "description": "I built this website to showcase my work and to learn more about Gatsby, CI/CD and have more experience with React.",
+    "details": "page generation from markdown files",
+    "imageAlt": "Code editor showcasing the development of the portfolio website",
+    "imageData": { "src": "../images/mocked-proj/portfolio-code.png" }
   },
   {
-    "title": "Mock Project Two",
-    "description": "Another mock project for UI testing.",
-    "details": "Details for mock project two.",
-    "imageAlt": "Mock Project Two Image",
-    "imageData": null,
-    "compact": false
+    "title": "Oven consumption calculator",
+    "description": "Developed the consumption model and webapp for a parametric consumption calculator of ovens, with downloadable PDF report.",
+    "details": "Increased customrer consumption awareness",
+    "imageAlt": "Oven consumption calculator UI",
+    "imageData": { "src": "../images/mocked-proj/consumption-calculator.png" }
   }
 ]
