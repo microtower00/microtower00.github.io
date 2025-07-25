@@ -12,5 +12,28 @@
     "details": "Increased customrer consumption awareness",
     "imageAlt": "Oven consumption calculator UI",
     "imageData": { "src": "../images/mocked-proj/consumption-calculator.png" }
+  },
+  {
+    "title": "AI Meal planning research",
+    "description": "Qualitative methods research investigating the need and perception of an AI assistant to meal planning. Collaborated with a group to code the data and analyze it.",
+    "details": "20+ users and a participatory workshop",
+    "imageAlt": "AI Meal planning research",
+    "imageData": { "src": "../images/mocked-proj/ai-meal-planning.png" }
+  },
+  {
+    "title": "Cicerone Indoor navigator",
+    "description": "Designed an indoor navigator UX and UI, as well as a small scale feasibility study, focusing on social inclusion and equal access to space",
+    "details": "Social inclusion and design",
+    "imageAlt": "Indoor navigator design",
+    "imageData": { "src": "../images/mocked-proj/indoor-navigator.png" }
+  },
+  {
+    "title": "Trust in Chatgpt vs Google",
+    "description": "Comparative study to analyze self-perceived trust in regular search engines and large language models",
+    "details": "TIA questionnaire",
+    "imageAlt": "Trust in Chatgpt vs Google",
+    "imageData": {
+      "src": "../images/mocked-proj/trust-in-chatgpt-vs-google.png"
+    }
   }
 ]
