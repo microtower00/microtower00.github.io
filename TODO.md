@@ -9,6 +9,8 @@
 - [ ] fix empty post layout
 - [ ] merge with main and publish.
 - [ ] edit pre styles to hoz scroll if wider than father. Maybe syntax highlighting?
+- [ ] add share option to blog post
+- [ ] add good img alts
 - [x] fix external link icon alignment external card
 - [x] valuta ridurre font nel title della card
 - [x] aggiungere "Soon" icon alle card mockate

@@ -26,7 +26,7 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
           internal: { contentFilePath: { regex: "/content/projects/" } }
           frontmatter: { public: { eq: true } }
         }
-        limit: 6
+        limit: 3
       ) {
         nodes {
           id
