@@ -645,3 +645,13 @@ a.project-card-compact {
   color: var(--accent-color);
   margin: auto 0;
 }
+
+.project-post-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
