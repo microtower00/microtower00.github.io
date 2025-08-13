@@ -22,11 +22,13 @@
     "deploy": "gatsby build && gh-pages -d public -b main",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "npm run generate-webp && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "developTest": "npx gatsby develop -H 0.0.0.0 -p 8000"
+    "developTest": "npx gatsby develop -H 0.0.0.0 -p 8000",
+    "generate-webp": "node scripts/simple-webp.js",
+    "test-resolve": "node scripts/webp-resolve.js"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",

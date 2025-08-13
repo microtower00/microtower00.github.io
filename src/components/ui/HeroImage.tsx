@@ -29,7 +29,7 @@ const HeroImage: React.FC<HeroImageProps> = (
         alt="Hero"
         style={{
           width: "100%",
-          height: "auto",
+          height: "100%",
           borderRadius: "8px",
           objectFit: "cover",
         }}
