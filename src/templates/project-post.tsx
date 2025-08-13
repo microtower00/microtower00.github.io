@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
+import { useEffect } from "react";
 import SiteHeader from "../components/layout/Header";
 import LatestProjects from "../components/sections/LatestProjects";
 import ProjectFrontmatter from "../components/ui/ProjectFrontmatter";
@@ -77,7 +78,11 @@ type ProjectPostProps = {
 export default function ProjectPost({ data, children }: ProjectPostProps) {
   const project = data.mdx;
   const id = project.id;
-  const { title } = project.frontmatter;
+  const { title, description } = project.frontmatter;
+
+  useEffect(() => {
+    document.title = `${title} - Michele Cazzaro's homepage`;
+  }, [title]);
 
   return (
     <>

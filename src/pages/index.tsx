@@ -21,7 +21,7 @@ const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Michele Cazzaro</title>;
+export const Head: HeadFC = () => <title>Michele Cazzaro's homepage</title>;
 
 export const query = graphql`
   query HomeProjectsQuery {
