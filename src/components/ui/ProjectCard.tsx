@@ -12,7 +12,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, compact }) => {
     typeof project.frontmatter.imageSrc === "object" &&
     project.frontmatter.imageSrc?.childImageSharp
       ? project.frontmatter.imageSrc.childImageSharp.gatsbyImageData
-      : undefined;
+      : { src: project.frontmatter.imageSrc };
   return (
     <Card
       href={project.frontmatter.slug}
