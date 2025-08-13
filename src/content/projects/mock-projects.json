@@ -4,7 +4,16 @@
     "description": "I built this website to showcase my work and to learn more about Gatsby, CI/CD and have more experience with React.",
     "details": "page generation from markdown files",
     "imageAlt": "Code editor showcasing the development of the portfolio website",
-    "imageData": { "src": "../images/mocked-proj/portfolio-code.png" }
+    "imageData": { "src": "../images/mocked-proj/portfolio-code.png" },
+    "href": "https://github.com/microtower00/microtower00.github.io"
+  },
+  {
+    "title": "Cicerone Indoor navigator",
+    "description": "Designed an indoor navigator UX and UI, as well as a small scale feasibility study, focusing on social inclusion and equal access to space",
+    "details": "Social inclusion and design",
+    "imageAlt": "Indoor navigator design",
+    "href": "https://www.figma.com/slides/00yfq3XGpruaHokCpdnFCw/Cicerone-Final?node-id=0-1&t=GHHnHkx5VEPmjnGt-1",
+    "imageData": { "src": "../images/mocked-proj/indoor-navigator.png" }
   },
   {
     "title": "Oven consumption calculator",
@@ -16,24 +25,12 @@
   {
     "title": "AI Meal planning research",
     "description": "Qualitative methods research investigating the need and perception of an AI assistant to meal planning. Collaborated with a group to code the data and analyze it.",
-    "details": "20+ users and a participatory workshop",
-    "imageAlt": "AI Meal planning research",
-    "imageData": { "src": "../images/mocked-proj/ai-meal-planning.png" }
+    "details": "20+ users and a participatory workshop"
   },
-  {
-    "title": "Cicerone Indoor navigator",
-    "description": "Designed an indoor navigator UX and UI, as well as a small scale feasibility study, focusing on social inclusion and equal access to space",
-    "details": "Social inclusion and design",
-    "imageAlt": "Indoor navigator design",
-    "imageData": { "src": "../images/mocked-proj/indoor-navigator.png" }
-  },
+
   {
     "title": "Trust in Chatgpt vs Google",
     "description": "Comparative study to analyze self-perceived trust in regular search engines and large language models",
-    "details": "TIA questionnaire",
-    "imageAlt": "Trust in Chatgpt vs Google",
-    "imageData": {
-      "src": "../images/mocked-proj/trust-in-chatgpt-vs-google.png"
-    }
+    "details": "TIA questionnaire"
   }
 ]
