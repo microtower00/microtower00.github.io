@@ -4,7 +4,7 @@
     "description": "I built this website to showcase my work and to learn more about Gatsby, CI/CD and have more experience with React.",
     "details": "page generation from markdown files",
     "imageAlt": "Code editor showcasing the development of the portfolio website",
-    "imageData": { "src": "../images/mocked-proj/portfolio-code.png" },
+    "imageData": { "src": "/images/webp/portfolio-code.webp" },
     "href": "https://github.com/microtower00/microtower00.github.io"
   },
   {
@@ -13,14 +13,14 @@
     "details": "Social inclusion and design",
     "imageAlt": "Indoor navigator design",
     "href": "https://www.figma.com/slides/00yfq3XGpruaHokCpdnFCw/Cicerone-Final?node-id=0-1&t=GHHnHkx5VEPmjnGt-1",
-    "imageData": { "src": "../images/mocked-proj/indoor-navigator.png" }
+    "imageData": { "src": "/images/webp/indoor-navigator.webp" }
   },
   {
     "title": "Oven consumption calculator",
     "description": "Developed the consumption model and webapp for a parametric consumption calculator of ovens, with downloadable PDF report.",
     "details": "Increased customrer consumption awareness",
     "imageAlt": "Oven consumption calculator UI",
-    "imageData": { "src": "../images/mocked-proj/consumption-calculator.png" }
+    "imageData": { "src": "/images/webp/consumption-calculator.webp" }
   },
   {
     "title": "AI Meal planning research",

@@ -1,6 +1,7 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { ExternalLink } from "lucide-react";
+import { resolveWebpWithFallback } from "../../utils/webp-resolve";
 
 export interface CardProps {
   href?: string;
@@ -54,7 +55,7 @@ const Card: React.FC<CardProps> = ({
         >
           {imageData && imageData.src ? (
             <img
-              src={imageData.src}
+              src={resolveWebpWithFallback(imageData.src)}
               alt={imageAlt}
               style={{
                 width: "100%",
