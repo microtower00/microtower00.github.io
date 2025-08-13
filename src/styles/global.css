@@ -16,6 +16,9 @@
   #heroImage {
     display: none !important;
   }
+  #heroImageOverlay {
+    display: none !important;
+  }
 }
 /* Variables */
 .heroXL {
@@ -644,6 +647,33 @@ a.project-card-compact {
 .card-external-link .project-card-title svg {
   color: var(--accent-color);
   margin: auto 0;
+}
+
+.hero-image-blur {
+  filter: blur(24px) grayscale(1);
+  transition: filter 0.4s, transform 0.4s, opacity 0.4s;
+}
+
+.hero-image-unblur {
+  animation: heroUnblurPop 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes heroUnblurPop {
+  0% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-image-unblur,
+.hero-image-blur,
+.hero-image-unblur img,
+.hero-image-blur img {
+  transition: filter 0.4s, transform 0.4s, opacity 0.4s;
 }
 
 .project-post-content img {
