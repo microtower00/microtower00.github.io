@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
         <p style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
           After graduating in Computer Science and working as a frontend
           software engineer @
-          <a href="https://unox.it" target="_blank" rel="noopener noreferrer">
+          <a href="https://unox.com" target="_blank" rel="noopener noreferrer">
             UNOX
           </a>
           , I am now pursuing a MSc degree in Human-Computer Interaction at the
