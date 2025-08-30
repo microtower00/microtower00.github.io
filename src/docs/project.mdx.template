@@ -1,0 +1,41 @@
+---
+title: "Your Project Title"
+slug: "/projects/your-project-slug"
+date: "2024-01-15"
+description: "A brief description of your project that appears in project cards and previews"
+details: "Additional details or subtitle that appears below the description"
+tags: ["UX Research", "Design", "Prototyping"]
+public: true
+author: "Your Name"
+imageSrc: "../../images/your-project-image.png"
+imageAlt: "Descriptive alt text for accessibility"
+compact: false
+---
+
+## Introduction
+
+Brief overview of what the project is about.
+
+## Problem Statement
+
+What problem were you trying to solve?
+
+## Methodology
+
+How did you approach the project?
+
+## Process
+
+Step-by-step breakdown of your work.
+
+## Results
+
+What did you achieve?
+
+## Learnings
+
+What did you learn from this project?
+
+## Next Steps
+
+What would you do differently or continue working on?
