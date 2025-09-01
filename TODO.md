@@ -19,3 +19,4 @@
 - [ ] add good img alts
 - [ ] fix project post layout, footer, spacings of p and h
 - [ ] make headings foldable
+- [ ] review cicerone post
