@@ -26,7 +26,6 @@ const PostLayout: React.FC<PostLayoutProps> = ({ title, meta, children }) => (
       {meta}
       <div className="project-post-content">{children}</div>
     </main>
-    <Footer />
   </div>
 );
 

@@ -89,8 +89,9 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
       <PostLayout title={title} meta={<ProjectFrontmatter project={project} />}>
         <MDXProvider components={projectComponents}>{children}</MDXProvider>
       </PostLayout>
-      {/* FIXME: should be inside but becomes broken when you put it there */}
       <LatestProjects excludeId={id} />
+      <Footer />
+      {/* FIXME: should be inside but becomes broken when you put it there */}
     </>
   );
 }

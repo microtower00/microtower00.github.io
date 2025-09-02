@@ -616,6 +616,7 @@ a.project-card-compact {
 
 .footer {
   width: 100%;
+  padding: 8px;
 }
 .footer-inner {
   color: var(--gray-text-color);

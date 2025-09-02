@@ -63,7 +63,12 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
   return (
     <section
       className="latest-projects"
-      style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "16px",
+        padding: "8px 16px",
+      }}
     >
       <label
         htmlFor="latest-projects-list"
@@ -71,7 +76,6 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
         style={{
           color: "var(--gray-text-color)",
           fontSize: "16px",
-          padding: "0 0 0 16px",
         }}
       >
         Other projects{" "}
