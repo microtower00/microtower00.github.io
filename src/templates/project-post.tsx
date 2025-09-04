@@ -11,61 +11,33 @@ import Footer from "../components/layout/Footer";
 import PostLayout from "../components/ui/PostLayout";
 
 const projectComponents = {
-  h1: (props: any) => <h1 className="hedingL" {...props} />,
-  h2: (props: any) => <h2 className="hedingL" {...props} />,
-  h3: (props: any) => <h3 className="headingM" {...props} />,
-  h4: (props: any) => <h4 className="headingM" {...props} />,
+  h1: (props: any) => <h1 className="blogHeadingL" {...props} />,
+  h2: (props: any) => <h2 className="blogHeadingL" {...props} />,
+  h3: (props: any) => <h3 className="blogHeadingM" {...props} />,
+  h4: (props: any) => <h4 className="blogHeadingS" {...props} />,
   p: (props: any) => <p className="bodyBlog" {...props} />,
-  ul: (props: any) => (
-    <ul
-      className="bodyBlog"
-      style={{ lineHeight: 1.7, margin: "1.2rem 0" }}
-      {...props}
-    />
-  ),
+  ul: (props: any) => <ul className="bodyBlog blogList" {...props} />,
   ol: (props: any) => (
     <ol
-      className="bodyBlog"
+      className="bodyBlog blogList"
       style={{ lineHeight: 1.7, margin: "1.2rem 0" }}
       {...props}
     />
   ),
-  li: (props: any) => <li style={{ margin: "0.5rem 0" }} {...props} />,
+  li: (props: any) => <li className="blogListItem" {...props} />,
   blockquote: (props: any) => (
-    <blockquote
-      className="bodyM"
-      style={{
-        borderLeft: "4px solid var(--accent-color)",
-        paddingLeft: "1rem",
-        margin: "1.5rem 0",
-        fontStyle: "italic",
-      }}
-      {...props}
-    />
+    <blockquote className="blogBlockquote" {...props} />
   ),
   code: (props: any) => (
     <code
+      className="blogInlineCode"
       style={{
-        backgroundColor: "var(--border-dark-gray)",
-        padding: "0.2rem 0.4rem",
-        borderRadius: "4px",
         fontFamily: "Courier New, Courier, monospace",
       }}
       {...props}
     />
   ),
-  pre: (props: any) => (
-    <pre
-      style={{
-        backgroundColor: "var(--border-dark-gray)",
-        padding: "1rem",
-        borderRadius: "8px",
-        overflowX: "auto",
-        margin: "1.5rem 0",
-      }}
-      {...props}
-    />
-  ),
+  pre: (props: any) => <pre className="blogCodeBlock" {...props} />,
 };
 
 type ProjectPostProps = {
@@ -89,8 +61,8 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
       <PostLayout title={title} meta={<ProjectFrontmatter project={project} />}>
         <MDXProvider components={projectComponents}>{children}</MDXProvider>
       </PostLayout>
-      {/* FIXME: should be inside but becomes broken when you put it there */}
       <LatestProjects excludeId={id} />
+      <Footer />
     </>
   );
 }

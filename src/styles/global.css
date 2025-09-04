@@ -22,21 +22,92 @@
 }
 /* Variables */
 .heroXL {
+  margin: 0;
   font-family: "VCR OSD Mono", Courier, monospace;
   font-size: 36px;
   line-height: 125%;
 }
 
 .hedingL {
+  margin: 0;
   font-family: "VCR OSD Mono", Courier, monospace;
   font-size: 24px;
   line-height: 133%;
 }
 
 .headingM {
+  margin: 0;
   font-family: "VCR OSD Mono", Courier, monospace;
   font-size: 16px;
   line-height: 133%;
+}
+
+.blogHeadingL {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 32px; /* Significantly smaller, more modern scale */
+  line-height: 1.2;
+  margin: 35px 0 15px 0; /* Reduced top margin, tighter spacing */
+}
+
+.blogHeadingM {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 24px;
+  line-height: 1.3;
+  margin: 25px 0 12px 0;
+  font-weight: normal; /* Remove non-existent semi-bold */
+}
+
+.blogHeadingS {
+  font-family: "VCR OSD Mono", Courier, monospace;
+  font-size: 20px; /* Same size as body but stands out via placement */
+  line-height: 1.4;
+  margin: 20px 0 10px 0;
+  font-weight: normal; /* Remove non-existent semi-bold */
+}
+
+.blogList {
+  line-height: 1.7;
+  margin: 1.2rem 0;
+  padding-left: 1.5em; /* This replaces the browser's default large padding */
+}
+
+.blogListItem {
+  margin: 0;
+  /* line-height: 150%; */
+}
+
+/* --- Blockquotes --- */
+.blogBlockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* --- Code --- */
+.blogInlineCode {
+  background-color: var(--border-dark-gray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.blogCodeBlock {
+  background-color: var(--border-dark-gray);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.4;
+}
+
+/* --- Links --- */
+.blogLink {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .label {
@@ -50,7 +121,17 @@
   font-family: "Satoshi", "Courier New", Courier, monospace;
   font-size: 20px;
   line-height: 175%;
+  margin: 0.5rem 0 !important;
 }
+
+/* .bodyBlog:has(+ ul),
+.bodyBlog:has(+ ol) {
+  margin-bottom: 0 !important;
+}
+.bodyBlog + ul,
+.bodyBlog + ol {
+  margin-top: 0 !important;
+} */
 
 .bodyL {
   font-family: "Satoshi", "Courier New", Courier, monospace;
@@ -80,9 +161,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
   font-family: "VCR OSD Mono", Courier, monospace;
   color: var(--text-color);
+}
+
+h1 {
+  margin: 0;
 }
 
 a {
@@ -616,6 +700,7 @@ a.project-card-compact {
 
 .footer {
   width: 100%;
+  padding: 8px;
 }
 .footer-inner {
   color: var(--gray-text-color);
