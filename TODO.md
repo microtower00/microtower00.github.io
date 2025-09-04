@@ -10,6 +10,7 @@
 - [x] cambiare animazione per card senza link
 - [x] cambiare spacing card e mettere title in maiusc
 - [x] remove tags until tags based filtering implemented
+- [x] fix project post layout, footer, spacings of p and h
 - [ ] header spacing and link behaviour
 - [ ] fix alignemnt in footer
 - [ ] decide post header
@@ -17,6 +18,6 @@
 - [ ] edit pre styles to hoz scroll if wider than father.M aybe syntax highlighting?
 - [ ] add share option to blog post
 - [ ] add good img alts
-- [ ] fix project post layout, footer, spacings of p and h
 - [ ] make headings foldable
 - [ ] review cicerone post
+- [ ] change to em typography
