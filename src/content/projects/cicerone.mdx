@@ -3,8 +3,8 @@ slug: "/projects/cicerone-indoor-navigator"
 title: "Cicerone Indoor navigator"
 description: "Designed an indoor navigator UX and UI, as well as a small scale feasibility study, focusing on social inclusion and equal access to space"
 details: "3 different wayfinding modes"
-imageAlt: "Map showcasing different elevation levels and slope highlightings"
-imageSrc: "../../images/accessibleNavi.png"
+imageAlt: "Indoor navigator design"
+imageSrc: "../../images/indoor-navigator.png"
 public: true
 date: "2025-07-24"
 ---
@@ -35,15 +35,36 @@ The Cicerone prototype is envisioned as an **"indoor Google Maps"** designed to 
 
 [**Image Suggestion 3: App Interface Concept** - A clear mockup of the Cicerone app interface showing a detailed, interactive 3D indoor map. Highlight various route options (e.g., normal, visually impaired, accessible) and a clear "Your Location" marker. Perhaps a feature for reporting disruptions is visible.]
 
-Cicerone incorporates **three main modes of navigation** to cater to a diverse user base :
+<MyButton>See the prototype</MyButton>
 
-1.  **Normal Mode**: This provides standard turn-by-turn navigation, including estimated time of arrival, awareness of blocked areas, and the ability to plan multi-stop routes . It allows for quick personalization during route planning, such as temporarily adjusting for an impairment without changing permanent settings. Sighted users can also benefit from the accessibility features built into the system .
+<div style={{ display: window.innerWidth > 700 && window.innerHeight > 800 ? 'block' : 'none' }}>
+    <iframe
+        style={{ border: "1px solid rgba(0, 0, 0, 0.1)", borderRadius: "8px" }}
+        width="100%"
+        height="450"
+        src="https://embed.figma.com/design/kgW5ASkO9blfl9FCECs3o8/Cicerone-App?node-id=102-4&embed-host=share"
+        allowfullscreen
+    ></iframe>
+
+    <iframe
+        style={{ border: "1px solid rgba(0, 0, 0, 0.1)", borderRadius: "8px" }}
+        width="100%"
+        height="1100px"
+        src="https://embed.figma.com/proto/kgW5ASkO9blfl9FCECs3o8/Cicerone-App?node-id=159-126&scaling=min-zoom&content-scaling=fixed&page-id=102%3A4&starting-point-node-id=159%3A126&show-proto-sidebar=1&embed-host=share"
+        allowfullscreen
+    ></iframe>
+
+</div>
+Cicerone incorporates **three main modes of navigation** to cater to a diverse
+user base :
+
+1.  **Default Mode**: This provides standard turn-by-turn navigation, including estimated time of arrival, awareness of blocked areas, and the ability to plan multi-stop routes . It allows for quick personalization during route planning, such as temporarily adjusting for an impairment without changing permanent settings. Sighted users can also benefit from the accessibility features built into the system .
 
 2.  **Visually Impaired Mode**: This mode is specifically tailored for blind and visually impaired individuals . It leverages **multi-modal navigation**, reducing reliance on visual displays . Key functionalities include **detailed voice feedback and turn-by-turn audio instructions**, **haptic feedback (phone vibrations)** for important turns or obstacle alerts, and **computer vision with vibrations** to assist with obstacle recognition . The system is designed for easier screen reader navigation and integrates real-time updates and user-signaled disruptions to provide accurate wayfinding . For example, a user like Jane, who is completely blind, would receive precise audio guidance and haptic feedback, allowing her to navigate efficiently and be alerted to temporary barriers or misplaced furniture .
 
     [**Image Suggestion 4: Visually Impaired Mode in Use** - A close-up shot of a hand holding a smartphone with wireless earbuds. The user's face is serene, indicating confidence in navigation. A guide dog's leash could be subtly visible. The phone screen could display a simplified, audio-focused interface or braille-like tactile feedback animation.]
 
-3.  **"Stroller Mode" (Movement Impairment Mode)**: This mode accounts for individuals with walking impediments, such as wheelchair users, people with strollers, or those carrying heavy packages . It guides users along **specific accessible routes that prioritize ramps, automatic doors, and elevators**, while actively **avoiding stairs, narrow, or tight passages** . The system provides real-time updates on route disruptions, such as an out-of-service elevator, and suggests alternative accessible paths . Mario, a wheelchair user, would find optimal routes to lecture halls, offices, and even social spaces, while Steven, a technician carrying heavy equipment, would benefit from load-friendly, stair-free routes .
+3.  **Movement Impairment Mode**: This mode accounts for individuals with walking impediments, such as wheelchair users, people with strollers, or those carrying heavy packages . It guides users along **specific accessible routes that prioritize ramps, automatic doors, and elevators**, while actively **avoiding stairs, narrow, or tight passages** . The system provides real-time updates on route disruptions, such as an out-of-service elevator, and suggests alternative accessible paths . Mario, a wheelchair user, would find optimal routes to lecture halls, offices, and even social spaces, while Steven, a technician carrying heavy equipment, would benefit from load-friendly, stair-free routes .
 
     [**Image Suggestion 5: Stroller Mode in Use** - A person in a wheelchair or pushing a stroller confidently navigating a spacious, ramped indoor corridor towards an automatic door or an elevator. The smartphone screen could show a green line indicating the accessible route.]
 
@@ -51,7 +72,7 @@ The Cicerone system also aims to provide broader benefits to institutions. These
 
 **Reflection and Key Learnings: Designing with Empathy and Impact**
 
-Developing the Cicerone prototype for a **Social Inclusion HCI course** proved to be a profound learning experience, particularly in understanding **how to think and design for specific groups of people** . This highlighted that while the project embraces principles of **universal design**, the core insight was the necessity of creating a **tailored tool** that directly addresses the unique challenges and needs of particular user groups . This ensures that while the tool is specific, its well-designed accessibility features ultimately enhance the experience for all users, including those without specific impairments .
+Developing the Cicerone prototype for the **Social Inclusion HCI course** proved to be a profound learning experience, particularly in understanding **how to think and design for specific groups of people** . This highlighted that while the project embraces principles of **universal design**, the core insight was the necessity of creating a **tailored tool** that directly addresses the unique challenges and needs of particular user groups . This ensures that while the tool is specific, its well-designed accessibility features ultimately enhance the experience for all users, including those without specific impairments .
 
 [**Image Suggestion 6: Team Collaboration/Brainstorming** - A photo of a diverse team (representing designers, developers, and researchers) collaborating around a whiteboard or screens, perhaps with user personas or journey maps displayed. Focus on interaction and discussion.]
 
@@ -69,3 +90,18 @@ The project also prompted reflections on broader implications:
 Cicerone represents a significant step towards creating more inclusive and navigable indoor environments. By combining advanced technology with a deep understanding of diverse user needs, we envision a future where everyone can confidently and autonomously explore the spaces around them.
 
 [**Image Suggestion 7: Closing Call to Action** - A clean, professional graphic with the Cicerone project logo, team contact information (e.g., "business@cicerone.com"), or a simple message like "Connect with us to learn more about Cicerone and explore partnership opportunities for a more accessible future."]
+
+export const MyButton = ({ children }) => (
+  <button
+    style={{
+      borderRadius: "8px",
+      border: "1px solid var(--border-dark-gray)",
+      boxShadow: "none",
+      background: "var(--primary-color)",
+      color: "purple",
+      margin: "auto",
+    }}
+  >
+    {children}
+  </button>
+);

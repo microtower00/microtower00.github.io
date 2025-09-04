@@ -20,3 +20,4 @@
 - [ ] fix project post layout, footer, spacings of p and h
 - [ ] make headings foldable
 - [ ] review cicerone post
+- [ ] duplicate the Cicerone Figma page to make it more tidy, then embed it in the post
