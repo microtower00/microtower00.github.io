@@ -1,5 +1,5 @@
 import React from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { ExternalLink } from "lucide-react";
 import { resolveWebpWithFallback } from "../../utils/webp-resolve";
 
@@ -71,7 +71,6 @@ const Card: React.FC<CardProps> = ({
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: "cover",
                 borderRadius: "8px",
               }}
             />
