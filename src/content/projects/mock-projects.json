@@ -13,25 +13,6 @@
     "details": "Increased customrer consumption awareness",
     "imageAlt": "Oven consumption calculator UI",
     "href": "https://www.unox.com/en_gb/consumption-calculator/",
-    "imageData": { "src": "/images/webp/consumption-calculator.webp" }
-  },
-
-  {
-    "title": "Trust in Chatgpt vs Google",
-    "description": "Comparative study to analyze self-perceived trust in regular search engines and large language models",
-    "details": "TIA questionnaire",
-    "imageAlt": "Trust in Chatgpt vs Google",
-    "imageData": {
-      "src": "../images/mocked-proj/trust-in-chatgpt-vs-google.png"
-    }
-  },
-  {
-    "title": "Non-addictive instagram redesign",
-    "description": "Redesign of Instagram to make it less addicting and more ethical",
-    "details": "Neuro-designed for better interactions",
-    "imageAlt": "Rehab Instagram redesign",
-    "imageData": {
-      "src": "../images/mocked-proj/rehab-instagram-redesign.png"
-    }
+    "imageData": { "src": "./images/webp/consumption-calculator.webp" }
   }
 ]
