@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <CreativeCommons size={16} />
+        <CreativeCommons
+          size={16}
+          style={{
+            flexShrink: 0,
+          }}
+        />
         <p>
           {new Date().getFullYear()} Michele Cazzaro. Content licensed under{" "}
           <a href="https://creativecommons.org/licenses/by-nc/4.0/">

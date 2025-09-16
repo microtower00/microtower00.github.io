@@ -1,0 +1,277 @@
+---
+slug: "/projects/cicerone-indoor-navigator"
+title: "Cicerone Indoor navigator"
+description: "Designed an indoor navigator UX and UI, as well as a small scale feasibility study, focusing on social inclusion and equal access to space"
+details: "3 different wayfinding modes"
+imageAlt: "Indoor navigator design"
+imageSrc: "../../../images/indoor-navigator.png"
+public: true
+date: "2025-07-24"
+---
+
+import normal from "./normal.png";
+import normal2 from "./normal2.png";
+import normal3 from "./normal3.png";
+
+import vizImpaired1 from "./vizImpaired1.png";
+import vizImpaired2 from "./vizImpaired2.png";
+import vizImpaired3 from "./vizImpaired3.png";
+
+import movImpaired1 from "./movImpaired1.png";
+import movImpaired2 from "./movImpaired2.png";
+import movImpaired3 from "./movImpaired3.png";
+
+import kiosk1 from "./kiosk1.png";
+import kiosk2 from "./kiosk2.png";
+import universityWebsite from "./universityWebsite.png";
+
+Navigating unfamiliar indoor spaces like museums, university campuses, hospitals and museums can be a significant challenge for many different types people. For the <a href="https://unitn.coursecatalogue.cineca.it/insegnamenti/2025/50791_649296_92026/2025/50791/10859?coorte=2025&schemaid=9058" target="_blank" rel="noopener noreferrer">Social Inclusion</a> course in my <a href="https://corsi.unitn.it/en/human-computer-interaction" target="_blank" rel="noopener noreferrer">HCI Master's</a> I decided, toghether with a team of fellow students, to look closer into this problem and propose an indoor navigator prototype called "Cicerone". The name is not random: like Cicero, the roman orator famous for his clarity and guidance through complex topics, our project aims to provide clear and accessible navigation through complex indoor spaces. For everyone.
+
+## The Challenge
+
+Commercial focus and subsequent advancements in mobile navigation technologies have targeted outdoor environments for the best part. Indoor navigation has been lagging behind, even when the need to navigate complex spaces has always been there. For some individuals, especially the ones with visual impairments of any kind, or movement impairments, the difficulties in navigating unknown spaces are magnified. Take into account the impact that loud noises, unclear signage, unexpected physical objects or blockades can have if you're already struggling. High technology costs might be a factor on this slow innovation, but we aimed to overcome these hurdles with our prototype.
+
+## Our Process
+
+Our journey began with a **literature review** on both outdoor and indoor navigation, identifying existing solutions and their limitations. We critically assessed how current apps address accessibility, recognizing the need to adapt and refine our project scope, ultimately shifting focus from outdoor to indoor navigation to tackle more specific, pressing needs.
+
+### User personas
+
+After that, it was time to start thinking effectively about what we wanted to create: we started talking to people and to eachother. In particular, asking questions to people who actually faced these struggles helped us build more solid **user personas**.
+
+Meet them:
+
+- **Jane**, a completely blind psychology student who relies on her smartphone and assistive technologies to navigate campus. She often finds it challenging to locate specific buildings and rooms, especially when temporary obstacles like construction work are present.
+- **Mario**, a wheelchair-bound PhD law student who struggles with inaccessible routes, such as stairs and narrow doorways. He often has to take longer detours to find ramps or elevators, which can be time-consuming and frustrating.
+- **Steven**, a university technician new to the campus, who frequently carries heavy equipment. He finds it difficult to navigate quickly and efficiently, especially when trying to avoid stairs or crowded areas.
+
+### Ecosystem design
+
+When we got to the Brainstorming phase, we realized that a digital service alone wasn't gonna make it. We needed to think about the whole ecosystem, including physical changes to the environment, and how these could complement the digital solution. We mapped out the entire user journey, identifying key touchpoints where users interact with both the physical and digital aspects of navigation. We identified the need to:
+
+- Create a **detailed 3D map** of the indoor environment, including all rooms, corridors, elevators, stairs, and other relevant features.
+- Position **Wi-Fi beacons** throughout the building to provide accurate location data.
+- Ideate **Kiosks** at key locations (entrances, major intersections) to assist users in starting their navigation journey.
+
+### Feasibility
+
+Finally, we conducted a small-scale **feasibility study** to assess the technical and financial viability of our proposed solution. This involved researching the costs associated with implementing Wi-Fi beacons, developing the app, and maintaining the system. We also explored potential funding sources, such as university grants or partnerships with accessibility organizations.
+
+To perform this, we adopted the **TELOS framework**, evaluating the project from six perspectives:
+
+- **Technical Feasibility**: **Key technologies like Wi-Fi beacons, AI indoor positioning, and mobile apps are available**. The challenge lies in careful integration for accuracy and usability.
+- **Economic Feasibility**: Estimated **development costs are €181,555 - €200,000**, with long-term benefits including reduced staff needs and improved accessibility. Funding is expected from UniTn, NGOs, and partner institutions.
+- **Legal Feasibility**: Requires strict compliance with **data privacy (GDPR), cybersecurity (NIS2 Directive), public safety regulations, and clearly defined liability for accidents**.
+- **Operational Feasibility**: Highly effective, potentially serving ~600 DIPSCO students annually. Achieving this requires features available online, broad awareness, and an easy-to-use, accessible design.
+- **Schedule Feasibility**: Software development and design are estimated to take **9 months to 1 year**. Implementation ranges from **1 month for an MVP to 2-3 months for full functionality**, including mapping and hardware setup.
+- **Cultural Feasibility**: Anticipated benefits include **increased user autonomy, improved accessibility, and enhanced community bonding**. Potential drawbacks are reduced social interaction and environmental impacts from technology use (e.g., carbon emissions).
+
+## The Solution
+
+The Cicerone prototype is envisioned as an **"indoor Google Maps"** designed to significantly enhance the **accessibility and navigability** of public or publicly accessible private spaces. The system aims for **precise indoor location** primarily through **Wi-Fi beacons** and will be further strengthened by an **AI-powered GeoLocation model** for accurate positioning inside buildings, even with weak or no Wi-Fi tracking. A crucial feature is **object and obstacle recognition**, implemented using **AI and Machine Vision**, which helps prevent accidents and improve safety.
+
+&nbsp;
+
+<div
+  style={{
+    width: "100%",
+  }}
+>
+  <iframe
+    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", borderRadius: "8px" }}
+    width="100%"
+    height="450"
+    src="https://embed.figma.com/design/WnltWL3QIh9GCHOIMtJlHq/Cicerone-Navigator?node-id=0-1&embed-host=share"
+    allowfullscreen
+  ></iframe>
+</div>
+
+&nbsp;
+
+Cicerone incorporates **three main modes of navigation** to cater to a diverse user
+base :
+
+1.  **Default Mode**: This provides standard turn-by-turn navigation, including estimated time of arrival, awareness of blocked areas, and the ability to plan multi-stop routes. It allows for quick personalization during route planning, such as temporarily adjusting for an impairment without changing permanent settings. Sighted users can also benefit from the accessibility features built into the system.
+
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        gap: "20px",
+        alignItems: "center",
+        img: { margin: 0 },
+      }}
+    >
+      <img
+        src={normal}
+        alt="Default Mode in Use"
+        caption="Default mode in use"
+        title="Default Mode in Use"
+      />
+      <img
+        src={normal2}
+        alt="Default Mode in Use"
+        caption="Default mode in use"
+        title="Default Mode in Use"
+      />
+      <img
+        src={normal3}
+        alt="Default Mode in Use"
+        caption="Default mode in use"
+        title="Default Mode in Use"
+      />
+    </div>
+
+2.  **Visually Impaired Mode**: This mode is specifically tailored for blind and visually impaired individuals. It leverages **multi-modal navigation**, reducing reliance on visual displays. Key functionalities include **detailed voice feedback and turn-by-turn audio instructions**, **haptic feedback (phone vibrations)** for important turns or obstacle alerts, and **computer vision with vibrations** to assist with obstacle recognition. The system is designed for easier screen reader navigation and integrates real-time updates and user-signaled disruptions to provide accurate wayfinding. For example, a user like Jane, who is completely blind, would receive precise audio guidance and haptic feedback, allowing her to navigate efficiently and be alerted to temporary barriers or misplaced furniture.
+
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        gap: "20px",
+        alignItems: "center",
+        img: { margin: 0 },
+      }}
+    >
+      <img
+        src={vizImpaired1}
+        height="400px"
+        alt="Visually Impaired Mode in Use"
+        caption="Visually Impaired mode in use"
+        title="Visually Impaired Mode in Use"
+      />
+      <img
+        src={vizImpaired2}
+        height="400px"
+        alt="Visually Impaired Mode in Use"
+        caption="Visually Impaired mode in use"
+        title="Visually Impaired Mode in Use"
+      />
+      <img
+        src={vizImpaired3}
+        height="400px"
+        alt="Visually Impaired Mode in Use"
+        caption="Visually Impaired mode in use"
+        title="Visually Impaired Mode in Use"
+      />
+    </div>
+
+3.  **Movement Impairment Mode**: This mode accounts for individuals with walking
+    impediments, such as wheelchair users, people with strollers, or those carrying heavy
+    packages. It guides users along **specific accessible routes that prioritize ramps,
+    automatic doors, and elevators**, while actively **avoiding stairs, narrow, or tight
+    passages**. The system provides real-time updates on route disruptions, such as an
+    out-of-service elevator, and suggests alternative accessible paths. Mario, a wheelchair
+    user, would find optimal routes to lecture halls, offices, and even social spaces,
+    while Steven, a technician carrying heavy equipment, would benefit from load-friendly,
+    stair-free routes.
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    gap: "20px",
+    alignItems: "center",
+    img: { margin: 0 },
+  }}
+>
+  <img
+    src={movImpaired1}
+    height="400px"
+    alt="Movement Impairment Mode in Use"
+    caption="Movement Impairment mode in use"
+    title="Movement Impairment Mode in Use"
+  />
+  <img
+    src={movImpaired2}
+    height="400px"
+    alt="Movement Impairment Mode in Use"
+    caption="Movement Impairment mode in use"
+    title="Movement Impairment Mode in Use"
+  />
+  <img
+    src={movImpaired3}
+    height="400px"
+    alt="Movement Impairment Mode in Use"
+    caption="Movement Impairment mode in use"
+    title="Movement Impairment Mode in Use"
+  />
+</div>
+The Cicerone system also aims to provide broader benefits to institutions. These
+include **reduced need for assistance staff**, **lower costs for physical signage**,
+and **optimized staff movement** within large facilities. Beyond the app, the project
+advocates for **changes in physical spaces** to enhance inclusivity, including redesigning
+door and pathway dimensions, adopting categorization systems like color coding, and
+integrating interactive lighting and kiosks at key points. The system also allows
+for **crowdsourcing** to highlight social spaces and gather user input on points
+of interest or issues.
+
+### Secondary touchpoints
+
+#### Kiosks
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    gap: "20px",
+    alignItems: "center",
+    img: { margin: 0 },
+  }}
+>
+  <img src={kiosk1} alt="Kiosk" title="Kiosk" caption="Kiosk" />
+  <img
+    src={kiosk2}
+    alt="Kiosk Interaction"
+    title="Kiosk Interaction"
+    caption="Kiosk Interaction"
+  />
+</div>
+#### University website
+
+{" "}
+
+<img
+  src={universityWebsite}
+  alt="University Website"
+  title="University Website"
+  caption="University Website"
+/>
+## Reflection and Key Learnings
+
+Developing the Cicerone prototype for the **Social Inclusion HCI course** proved to be a profound learning experience, particularly in understanding **how to think and design for specific groups of people**. This highlighted that while the project embraces principles of **universal design**, the core insight was the necessity of creating a **tailored tool** that directly addresses the unique challenges and needs of particular user groups. This ensures that while the tool is specific, its well-designed accessibility features ultimately enhance the experience for all users, including those without specific impairments.
+
+A significant personal learning involved the importance of **active listening and gaining insights from real-world interactions**, such such as conversations with my blind friend, which directly informed the design choices and deepened empathy for the target users. This experience underscored the value of moving beyond theoretical understanding to direct user engagement. Initial project feedback highlighted the need for **more specific user personas and scenarios**, an area that was subsequently developed to better anchor the problem and guide design implications.
+
+Looking forward, if given more time, the next critical step would be to develop a **Minimum Viable Product (MVP)** and then conduct **specific user testing with diverse personas** to gather feedback and iterate on the design. Additionally, further efforts would be dedicated to **strengthening the project's financial feasibility**. It became clear that **investments in public space accessibility consistently demonstrate a good Return on Investment (ROI)**, through benefits like reduced staff needs, lower signage costs, and improved well-being and university rankings. Rough estimates place the full development cost between €120k (if cuts are made) and €200k, with funding strategies involving partnerships with universities, NGOs (like Unione Italiana Ciechi), hospitals, museums, and airports.
+
+The project also prompted reflections on broader implications:
+
+- **Cultural Impact**: While Cicerone aims to increase **autonomy and community bonding** by making spaces more accessible, it also presents a nuanced cultural impact. The system allows users to navigate independently without asking for directions, which, while empowering, could potentially lead to a **slight reduction in incidental social interactions**.
+- **Environmental Impact**: The shift from physical to digital tools, while replacing paper maps, necessitates considering the **environmental footprint of technology**. This includes **carbon emissions from electricity production, water consumption and heat generation associated with AI processing, the impact of blue light emissions from screens, and the critical need for responsible recycling of tech items**.
+
+## Closing: A Step Towards a More Accessible World
+
+Cicerone represents a significant step towards creating more inclusive and navigable indoor environments. By combining advanced technology with a deep understanding of diverse user needs, we envision a future where everyone can confidently and autonomously explore the spaces around them.
+
+&nbsp;
+
+Check out additional material here:
+
+<a
+  href="/financial_feasibility_study_cicerone.pdf"
+  target="\_blank"
+  rel="noopener noreferrer"
+>
+  Financial feasibility study
+</a>
+<a href="/Cicerone_pitch.pdf" target="\_blank" rel="noopener noreferrer">
+  Cicerone pitch
+</a>
+<a
+  href="https://www.figma.com/file/WnltWL3QIh9GCHOIMtJlHq/Cicerone-Navigator?type=design&node-id=0-1&t=3XoXoK7bG6mYk3Yf-0"
+  target="\_blank"
+  rel="noopener noreferrer"
+>
+  Figma designs
+</a>

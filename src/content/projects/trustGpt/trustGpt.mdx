@@ -1,0 +1,147 @@
+---
+slug: "/projects/trust-google-vs-gpt"
+title: "Trust in Chatgpt vs Google"
+description: "Comparative study to analyze self-perceived trust in regular search engines and large language models"
+details: "TIA questionnaire"
+imageSrc: "../../../images/trustGpt.png"
+public: true
+date: "2025-08-24"
+---
+
+import trust_context from "./trust_context.png";
+import prefTrustMed from "./prefTrustMed.png";
+import prefTrustTrip from "./prefTrustTrip.png";
+import ageTrip from "./ageTrip.png";
+import ageMedical from "./ageMedical.png";
+
+LLMs have changed the way people look for information online since the introduction of web search functinalities. The interaction they can have now is more engaging, thanks to a tailored and conversational tone. I wondered... does this impact the trust people have on the same type of information?
+
+## Challenge
+
+Our research aimed to address this gap by investigating **whether people have different trust perceptions in various scenarios when using [Google](https://www.google.com) versus [ChatGPT](https://www.chatgpt.com)**. This is vital because **mistrust or overreliance can hinder performance and even be detrimental**, especially when seeking advice in sensitive areas of personal life. While extensive literature exists on trust in Google, the factors influencing trust in ChatGPT remain largely unexplored.
+
+This project, therefore, delves into how these differences influence user trust and preference across varying information-seeking scenarios, considering factors like query sensitivity and demographics.
+
+## Research/Process
+
+The process involved a structured approach to data collection and analysis.
+
+### Research Questions and Hypotheses
+
+- **Primary Questions** investigated whether trust in search engines (Google/ChatGPT) depends on query sensitivity and how demographics (gender, age, education, etc.) affect perceived trust and preference
+- Our **Main Hypothesis** stated that trust in search engines depends on query sensitivity, with Google favored for sensitive queries and ChatGPT for non-sensitive ones
+- **Sub-hypotheses** explored if younger users and students prefer ChatGPT, if gender and education influence platform usage (hypothesizing no influence), and if trust correlates with preference
+
+### Research Design and Data Analysis
+
+- We used a **survey-based quantitative design** with a questionnaire. To prevent order bias, **four versions of the questionnaire randomized the presentation of sensitive and non-sensitive scenarios**.
+- Statistical analyses included **Two-factor ANOVA, Two-sample T-tests, One-factor ANOVA, and Linear Regression** to assess how search engine type, context sensitivity, and demographics influenced trust and preference.
+
+### Defining Query Sensitivity
+
+- **Sensitive information** was defined by a scenario asking for "advice on what to do to feel better" when sick, representing **Medical Information**.
+- **Non-sensitive information** was defined by a scenario about "planning a trip and want to know the most famous places to visit," representing **Trip Recommendations**
+
+### Measuring Trust and Preference
+
+**Trust** was measured using **11 items on a 5-point Likert scale**, adapted from the **[Trust in Automation (TiA) scale by Körber (2019)](https://github.com/moritzkoerber/TiA_Trust_in_Automation_Questionnaire)**, including subscales for Reliability/Competence and Trust. A "Trustability index" was calculated as the average of these items.
+
+**Preference** was measured using **5 items on a 5-point Likert scale**, adapted from a **Preference scale by Merritt (2011)**. A "Preference index" was calculated from these items.
+
+### Sampling and Data Collection
+
+The **target demographic was young to middle-aged individuals (18-35), specifically university students**, aiming for equal representation across age, employment, and educational levels.
+Questionnaires were distributed online via **WhatsApp, Telegram, and Instagram**.
+
+### Questionnaire Refinement (Pilot Testing)
+
+A pilot test gathered feedback on structure, clarity, and completion time. The survey averaged 13 minutes.
+Feedback led to **adjustments, including extending the research explanation and addressing redundant or missing questions**
+
+### Demographic Data Collected
+
+Information on participants' **age, gender, level of education, current employment status**, and **familiarity** (frequency and purpose of search engine use) was collected
+
+## Synthesis
+
+Our quantitative study, employing surveys and statistical analysis, revealed several key insights into user trust and preference between Google Search and ChatGPT.
+
+### Trust is Context-Dependent
+
+While there were **no major differences in overall average trust perceptions between Google and ChatGPT**, the **context of the query significantly impacted trust**.
+This supports our **main hypothesis: "Trust in Search Engines Depends on the sensitivity of the query"**.
+
+<img
+  src={trust_context}
+  alt="Trust in Google vs ChatGPT based on context sensitivity"
+  title="Trust in Google vs ChatGPT based on context sensitivity"
+  caption="Trust in Google vs ChatGPT based on context sensitivity"
+/>
+
+**Google's trust perception remained generally constant** across different scenarios.
+**ChatGPT excelled in non-sensitive contexts** (like trip recommendations), while \*\*Google was favored for sensitive scenarios\*\* (such as medical advice) where users need more control and source transparency.
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    gap: "20px",
+    alignItems: "center",
+    img: { margin: 0 },
+  }}
+>
+  <img
+    src={prefTrustMed}
+    alt="Trust in Google vs ChatGPT based on context sensitivity"
+    title="Trust in Google vs ChatGPT based on context sensitivity"
+    caption="Trust in Google vs ChatGPT based on context sensitivity"
+  />
+  <img
+    src={prefTrustTrip}
+    alt="Trust in Google vs ChatGPT based on context sensitivity"
+    title="Trust in Google vs ChatGPT based on context sensitivity"
+    caption="Trust in Google vs ChatGPT based on context sensitivity"
+  />
+</div>
+### Demographic Influences on Trust and Preference
+
+Age played a role: **Younger users (18-26) showed significantly higher trust in Google Search** compared to older users. However, the initial sub-hypothesis that "Younger people and students are more inclined to use Chat-GPT" was not significantly supported by the data for ChatGPT trust directly.
+**Employment status influenced trust in ChatGPT**: This was a significant factor, indicating that different employment groups (unemployed, student, employed) held varying trust levels in ChatGPT.
+**Gender and educational level did not significantly influence platform usage or trust perceptions** for either search engine, supporting one of our sub-hypotheses.
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    gap: "20px",
+    alignItems: "center",
+    img: { margin: 0 },
+  }}
+>
+  <img
+    src={ageMedical}
+    alt="Trust in Google vs ChatGPT based on age groups in sensitive scenarios"
+    title="Trust in Google vs ChatGPT based on age groups in sensitive scenarios"
+    caption="Trust in Google vs ChatGPT based on age groups in sensitive scenarios"
+  />
+  <img
+    src={ageTrip}
+    alt="Trust in Google vs ChatGPT based on age groups in non-sensitive scenarios"
+    title="Trust in Google vs ChatGPT based on age groups in non-sensitive scenarios"
+    caption="Trust in Google vs ChatGPT based on age groups in non-sensitive scenarios"
+  />
+</div>
+
+### Trust and Preference Correlation
+
+A strong positive correlation was found: **Trust in a search engine is linearly linked with preference for that search engine**. This indicates that users are more likely to prefer using a tool they perceive as trustworthy.
+
+In summary, our findings highlight that while LLMs are reshaping online search, user trust is not universally applied. Instead, it is highly sensitive to the information context, with traditional search engines retaining an edge in sensitive areas.
+
+## Reflection
+
+This project revealed that **user trust in search engines is scenario-dependent**. Users favor Google for sensitive queries due to source transparency, while ChatGPT is preferred for non-sensitive, conversational tasks. This confirms our main hypothesis. A strong **correlation between trust and preference** was also observed, indicating trust directly influences tool adoption.
+
+Challenges included the **largely unexplored factors influencing trust in ChatGPT** and limitations of our university student sample and self-reported data. These highlight the need for future diverse sampling and behavioral studies.
+
+Ultimately, the research reinforced **user-centered design principles**: advocating for **transparency, keeping "humans in the AI loop," and experimenting with diverse demographics** to build trustworthy and effective AI-powered search experiences.

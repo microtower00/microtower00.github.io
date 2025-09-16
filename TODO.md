@@ -2,18 +2,22 @@
 - [x] change colors
 - [x] add parametric icon svg for button component
 - [x] add parametric behavior for button component
-- [ ] header spacing and link behaviour
-- [ ] remove tags until tags based filtering implemented
-- [ ] fix alignemnt in footer
-- [ ] decide post header
-- [ ] fix empty post layout
-- [ ] merge with main and publish.
-- [ ] edit pre styles to hoz scroll if wider than father. Maybe syntax highlighting?
-- [ ] add share option to blog post
-- [ ] add good img alts
+- [x] merge with main and publish.
 - [x] fix external link icon alignment external card
 - [x] valuta ridurre font nel title della card
 - [x] aggiungere "Soon" icon alle card mockate
 - [x] fix compact card spacing
 - [x] cambiare animazione per card senza link
 - [x] cambiare spacing card e mettere title in maiusc
+- [x] remove tags until tags based filtering implemented
+- [x] fix project post layout, footer, spacings of p and h
+- [ ] header spacing and link behaviour
+- [ ] fix alignemnt in footer
+- [ ] decide post header
+- [ ] fix empty post layout
+- [ ] edit pre styles to hoz scroll if wider than father.M aybe syntax highlighting?
+- [ ] add share option to blog post
+- [ ] add good img alts
+- [ ] make headings foldable
+- [ ] review cicerone post
+- [ ] change to em typography
