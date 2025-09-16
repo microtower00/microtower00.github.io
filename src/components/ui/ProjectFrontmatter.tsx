@@ -6,7 +6,7 @@ const ProjectFrontmatter: React.FC<{ project: Project }> = ({ project }) => (
   <MetaInfoDisplay
     date={project.frontmatter.date}
     author={project.frontmatter.author || "Michele Cazzaro"}
-    tags={project.frontmatter.tags}
+    // tags={project.frontmatter.tags}
   />
 );
 
