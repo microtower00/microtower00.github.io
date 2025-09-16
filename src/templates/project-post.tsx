@@ -38,6 +38,14 @@ const projectComponents = {
     />
   ),
   pre: (props: any) => <pre className="blogCodeBlock" {...props} />,
+  a: (props: any) => (
+    <a
+      className="blogLink"
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+    />
+  ),
 };
 
 type ProjectPostProps = {

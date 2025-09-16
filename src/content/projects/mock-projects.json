@@ -14,5 +14,13 @@
     "imageAlt": "Oven consumption calculator UI",
     "href": "https://www.unox.com/en_gb/consumption-calculator/",
     "imageData": { "src": "./images/webp/consumption-calculator.webp" }
+  },
+  {
+    "title": "Mountain valley community app wireframing",
+    "description": "During the HIT UX Challenge 2024, a 7 days design sprint, I worked with a team of 4 conceptualize a community app.",
+    "details": "Rapid prototyping and user testing",
+    "imageAlt": "Mountain valley community app wireframing",
+    "href": "https://www.figma.com/proto/GUXnvmtDMVe9F22sjCkmYQ/UX-Challenge---Val-di-Fiemme?node-id=18-182&p=f&t=SNlcJsblJQ5dJLOP-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A182&device-frame=0",
+    "imageData": { "src": "./images/webp/hit-ux-challenge-2024.webp" }
   }
 ]
