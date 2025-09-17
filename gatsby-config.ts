@@ -59,6 +59,12 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/content/projects`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `static/favicon/android-chrome-512x512.png`,
+      },
+    },
   ],
 };
 
