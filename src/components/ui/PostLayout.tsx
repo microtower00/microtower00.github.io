@@ -29,7 +29,13 @@ const PostLayout: React.FC<PostLayoutProps> = ({ title, meta, children }) => (
           gap: "32px",
         }}
       >
-        <h1 className="blogHeadingL" style={{ margin: 0 }}>
+        <h1
+          className="blogHeadingL"
+          style={{
+            margin: 0,
+            color: "var(--secondary-color)",
+          }}
+        >
           {title}
         </h1>
         {meta}
