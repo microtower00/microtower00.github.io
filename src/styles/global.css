@@ -699,7 +699,6 @@ a.project-card-compact {
 }
 
 .footer {
-  width: calc(100% -8px);
   padding: 8px;
 }
 
