@@ -1,17 +1,19 @@
 import React from "react";
-import { Calendar, User, Tag } from "lucide-react";
+import { Calendar, User, Tag, ClockFading } from "lucide-react";
 import TagsList from "./TagsList";
 
 interface MetaInfoDisplayProps {
   date?: string;
   author?: string;
   tags?: string[];
+  readTime?: string;
 }
 
 const MetaInfoDisplay: React.FC<MetaInfoDisplayProps> = ({
   date,
   author,
   tags,
+  readTime,
 }) => (
   <div className="project-frontmatter">
     {date && (
@@ -30,6 +32,15 @@ const MetaInfoDisplay: React.FC<MetaInfoDisplayProps> = ({
       >
         <User size={18} style={{ marginRight: 4 }} />
         {author}
+      </div>
+    )}
+    {readTime && (
+      <div
+        className="project-frontmatter-readtime"
+        style={{ display: "flex", alignItems: "center", gap: 4 }}
+      >
+        <ClockFading size={18} style={{ marginRight: 4 }} />
+        {readTime} min read
       </div>
     )}
     {tags && tags.length > 0 && (

@@ -78,6 +78,7 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
 export const query = graphql`
   query ProjectPostById($id: String!) {
     mdx(id: { eq: $id }) {
+      body
       id
       frontmatter {
         title
@@ -91,3 +92,12 @@ export const query = graphql`
     }
   }
 `;
+
+function extractTextFromReactNode(node: React.ReactNode): string {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return node.toString();
+  if (Array.isArray(node)) return node.map(extractTextFromReactNode).join(" ");
+  if (React.isValidElement(node))
+    return extractTextFromReactNode(node.props.children);
+  return "";
+}

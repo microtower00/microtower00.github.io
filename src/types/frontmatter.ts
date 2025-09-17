@@ -20,6 +20,7 @@ export interface Frontmatter {
 
 export interface Project {
   id: string;
+  body?: any;
   frontmatter: Frontmatter;
 }
 
