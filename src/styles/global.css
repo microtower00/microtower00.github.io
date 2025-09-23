@@ -773,3 +773,24 @@ a.project-card-compact {
   border-radius: 8px;
   object-fit: cover;
 }
+
+/* TIMELINE */
+.cvCircle {
+  background-color: red;
+  border-radius: 999px;
+  width: 8px;
+  height: 8px;
+  margin: 12px;
+}
+
+.cvCircle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--green-accent);
+  animation: pulse 2s infinite;
+}
