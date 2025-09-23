@@ -9,7 +9,8 @@ public: true
 date: "2025-10-01"
 ---
 
-If Instagram is as addictive as heroin, we tried to design methadone.
+If Instagram is the heroin of digital attention, we attempted to design its methadone.[^1]
+
 These words might sound too strong but, during our literature review for undertanding social media abuse, we found several scientific articles comparing social media addiction to substance addiction.
 
 In brief, social media addiction is linked to:
@@ -21,206 +22,47 @@ In brief, social media addiction is linked to:
 
 Grounding the work in the principles of **social psychology**, I worked on a small team project to redesign Instagram.
 
-# Social Media and Addiction
+## Researching literature
 
-If Instagram is the heroin of digital attention, we attempted to design its methadone.[^1]
+Me and my group had first hand experience about the negative effects of using social medias, but we did not want our project to be grounded solely on our views. We proceeded to review relevant scientific literature to better gain an understanding of addictions and specifically social media addiction.
 
-While the metaphor is strong, it reflects growing literature showing parallels between social media addiction and substance-use disorders.[^2][^3]
+### Addiction
 
-## References
+While Social Media Addiction is not recognized as an official disorder in the [DSM-5](https://www.psychiatry.org/psychiatrists/practice/dsm) , it shares many characteristics with recognized behavioural addictions. These include:
 
-## Goal
+- **Compulsive Use**: An uncontrollable urge to use social media, often at the expense of other activities
+- **Withdrawal Symptoms**: Feelings of anxiety, irritability, or depression when not using social media
+- **Tolerance**: The need to spend increasing amounts of time on social media to achieve the same level of satisfaction
+- **Negative Impact**: Significant impairment in social, occupational, or other important areas of functioning due to excessive social media use
 
-Create an alternative user interface for Instagram, that follows the same design flavour, but gives the user more power over his own attention.
+### Features
 
-## Process
+We also discovered came to the understanding that multiple features present in Instagram are specifically designed to exploit human psychology and brain mechanisms.
 
-I brainstormed this solution with 3 other HCI fellows after reviewing the literature on social media addiction and persuasive design.
+The most notable ones are:
 
----
+- **Infinite scroll**, leveraging unconscious behaviours to keep us on the platform, performed by the removal of stopping cues
+- **Pull-to-refresh**, a mechanism that creates an anticipation of new content, similar to the one experienced in gambling
+- **Social Approval Metrics**, a feature that provides instant gratification and validation, triggering dopamine release in the brain
+- **Notifications**, with their power to capture user's attention and bring them back on the platform
+- **Algorithmic Content Curation**, which personalizes the user experience but can also create echo chambers and reinforce addictive behaviours
 
-### **"Brainrot Police": A UX Approach to Counter Social Media Addiction on Instagram**
+## Redesigning Instagram
 
-**Project Introduction**
+WIth this knowledge in mind, we brainstormed. Our goal was not to create something realistically implementable, as it it in Meta's interest not to. Our goal was to show users what a less addictive Instagram looks like. Our proposed list of changes is designed to be part of a modified version of the original app, that keeps the original design language but adds or removes features. A concept for an unofficial [alternative frontend](https://www.trackawesomelist.com/mendel5/alternative-front-ends/readme/).
 
-The "Brainrot Police" project was conceived from the growing concern about the impact of Internet and social media addiction on mental health and individual well-being. Our focus was specifically on Instagram, a platform recognized for its potentially addictive mechanisms. Our primary goal was to develop innovative solutions to **make Instagram less addictive while retaining its essential features**, empowering users with greater control and awareness over their usage.
+### Overview of changes
 
-**The Problem: Digital Addiction and Its Effects**
-
-Internet addiction is defined as a mental disorder characterized by a compulsive desire to connect to the Internet and a painful inability to disconnect in a timely manner. Researchers distinguish two main types:
-
-- **Communication addiction**, involving constant online interactions via social media, forums, chats, or blogs.
-- **Entertainment addiction**, which includes searching for various types of content like videos, images, or texts, and is largely dominated by online games.
-
-Reducing or stopping Internet use can lead to discomfort, lasting from several days to a month, manifesting in symptoms such as emotional and motor agitation, anxiety, obsessive thoughts about online activities, fantasies and dreams about the Internet, and involuntary finger movements resembling typing.
-
-Prolonged and mindless Internet use, often involving continuous jumping between pages and links, **weakens and fragments attention**. Our brains constantly gather diverse and often unrelated information, shifting activity from one piece of content to another. This constant switching strengthens the neural connections responsible for rapid task switching at the expense of those needed for deep concentration. Internet users often prefer short videos or minimal-text blog posts, further contributing to this weakening of deep concentration.
-
-Social Networking Site (SNS) addiction, defined as excessive use driven by an uncontrollable urge leading to negative consequences in real-life areas, is linked to various issues:
-
-- **Mental problems**: including body perception issues, FOMO (Fear Of Missing Out), depression, and low self-esteem.
-- **Physical health issues**: such as poor posture, eye strain, and disrupted sleep patterns.
-- **Erosion of genuine relationships**: where virtual personas are prioritized over meaningful real-life connections.
-- **Decreased productivity** and **concentration difficulties**.
-
-Instagram specifically leverages several "avenues of addiction":
-
-- The **Dopamine Cycle**: exploiting seeking, anticipating, and unpredictable rewards.
-- **Infinite Scroll**: promoting unconscious behavior with no stopping cues.
-- **Pull-to-refresh**.
-- **Unpredictable rewards**.
-- **Social aspects**: including social affirmation (likes, comments, followers), FOMO (notifications), and reciprocity ("Read" message icon, sharing).
-- An **Enticing UI** (User Interface).
-
-**Our Project Philosophy and Goals**
-
-The "Brainrot Police" project adopted a user-centric philosophy with the following goals:
-
-- **Reducing the addiction potential** of Instagram while still offering its essential features.
-- **Increasing users' awareness** of social media addiction and their time spent on the platform.
-- **Giving users more power to customize** their Instagram experience.
-- **Assisting users to quit or reduce usage** in a non-overly forceful manner.
-
-**Key Features Implemented**
-
-We developed several innovative features to address the identified problems and foster healthier platform usage:
-
-1.  **"Goodbye Infinite Scroll"**: To combat the unconscious behavior and lack of stopping cues inherent in infinite scrolling, we introduced an interactive "nudge". After a certain number of interactions, a message appears, for example: **"You already clicked here 5 times today, do you really need more?"**. Users are then given the options "Quit" or "Load more". This "nudge" progressively strengthens with increased usage.
-
-2.  **"Goodbye Colors" (Grayscale Mode)**: In cases of overuse, the application interface automatically **switches to grayscale (black and white)**. This visual change aims to make the app less rewarding and appealing, reducing gratification and disincentivizing prolonged use, ultimately contributing to decreased screen time.
-
-3.  **"The Mirror"**: This feature **displays the user's own image on the screen**. Seeing oneself promotes self-awareness, making users more conscious of their behavior and its impact on their personal goals.
-
-4.  **Time-Spent Indicator**: A visible indicator shows the current time spent using the app. This promotes awareness and encourages users to set and adhere to limits on their usage.
-
-5.  **More Settings (Advanced Customization)**: We designed the system to give users the ability to **customize almost every aspect of their experience**. Within the settings, users can:
-
-    - **Enable or Disable Specific Functionalities**: This includes posts, reels, stories, sharing, commenting, liking, and saving.
-    - **Control Visibility**: Users can decide where these functionalities are viewable (e.g., homepage, search page, direct messages).
-
-6.  **Limitations**: Users can set detailed limits for their app usage:
-
-    - **Time Limitations**: Daily time limits can be set for the overall app (e.g., 2 hours) or for specific features like Reels (e.g., 30 minutes) and Posts (e.g., 2 hours).
-    - **Number of Reels**: Users can specify a maximum number of Reels they wish to view per day (e.g., 50, 100, 200, 500, or a personalized number).
-    - **Scheduled Limits**: Limits can be activated for specific daily hours (e.g., 10:00 to 22:00) and chosen days of the week.
-
-7.  **Content Preferences**: This feature allows users to tailor the content they see:
-
-    - **Feed Type**: Users can choose between an **Algorithmic Feed** (Instagram's default, which can be personalized but may lead to filter bubbles) or a **Chronological Feed** (displaying content in publication order, potentially offering a wider range of viewpoints).
-    - **Content Filtering**: Users can manage preferences for specific content categories, such as Political, News, Sexually suggestive, Nudity, Misrepresentation, Dark humor, Sensitive content, and Not yet fact-checked. For each category, users can choose to "Hide," "Warn," or "Show" the content.
-
-8.  **"Friends-only mode"**: When enabled, this setting allows users to **see only content from people who follow them back**, hiding all other pages to reduce distractions and unwanted exposure.
-
-9.  **"I'm Quitting!" Mode**: Designed for a structured digital detox. This functionality enables users to **block access to Instagram for a predefined period** (hours or days). To unlock the app before the set time, users must complete specific tasks (e.g., "Meditate," "Feed the cat," "Clean the house"), with the option to attach a photo as proof. Users can also decide if their content remains visible to others during this block.
-
-10. **A Social Campaign**: To actively inform users, **in-app informational campaigns** are integrated through posts, reels, and stories. These direct messages explain social media addiction, how to manage it, and present the tools offered by the app, featuring warnings like: **"Social media seriously harms your mental health and people around you - Stop now"**.
-
-**Conclusion**
-
-The "Brainrot Police" features represent a significant commitment in UX design to tackle a critical contemporary challenge: social media addiction. By providing users with proactive tools for awareness, personalization, and self-limitation, we aim to **transform the Instagram experience from potentially addictive to one that is more balanced and user-controlled**, promoting lasting digital well-being.
-
-Here is a revised version of the project article for your UX portfolio, explicitly highlighting the addiction mechanisms each feature targets:
-
----
-
-### **"Brainrot Police": A UX Approach to Counter Social Media Addiction on Instagram**
-
-**Project Introduction**
-
-The "Brainrot Police" project was conceived from the growing concern about the impact of Internet and social media addiction on mental health and individual well-being. Our focus was specifically on Instagram, a platform recognized for its potentially addictive mechanisms. Our primary goal was to develop innovative solutions to **make Instagram less addictive while retaining its essential features**, empowering users with greater control and awareness over their usage.
-
-**The Problem: Digital Addiction and Its Effects**
-
-**Internet addiction** is defined as a mental disorder characterized by a compulsive desire to connect to the Internet and a painful inability to disconnect in a timely manner. Researchers distinguish two main types:
-
-- **Communication addiction**, involving constant online interactions via social media accounts, forums, chats, or blogs.
-- **Entertainment addiction**, which includes searching for various types of content like videos, images, or texts, largely dominated by online games.
-
-Reducing or stopping Internet use can lead to discomfort, lasting from several days to a month, manifesting in symptoms such as emotional and motor agitation, anxiety, obsessive thoughts about online activities, fantasies and dreams about the Internet, and involuntary finger movements resembling typing.
-
-Prolonged and mindless Internet use, often involving continuous jumping between pages and links, **weakens and fragments attention**. Our brains constantly gather diverse and often unrelated information, shifting activity from one piece of content to another. This constant switching strengthens the neural connections responsible for rapid task switching at the expense of those needed for deep concentration. Internet users often prefer short videos or minimal-text blog posts, further contributing to this weakening of deep concentration.
-
-**Social Networking Site (SNS) addiction**, defined as excessive use driven by an uncontrollable urge leading to negative consequences in real-life areas, is linked to various issues:
-
-- **Mental problems**: including body perception issues, FOMO (Fear Of Missing Out), depression, and low self-esteem.
-- **Physical health issues**: such as poor posture, eye strain, and disrupted sleep patterns.
-- **Erosion of genuine relationships**: prioritizing virtual personas over meaningful real-life connections.
-- **Decreased productivity** and **concentration difficulties**.
-
-Instagram specifically leverages several "avenues of addiction":
-
-- The **Dopamine Cycle**: exploiting seeking, anticipating, and unpredictable rewards.
-- **Infinite Scroll**: promoting unconscious behavior with no stopping cues.
-- **Pull-to-refresh**.
-- **Unpredictable rewards**.
-- **Social aspects**: including social affirmation (likes, comments, followers), FOMO (notifications), and reciprocity ("Read" message icon, sharing).
-- An **Enticing UI** (User Interface).
-
-**Our Project Philosophy and Goals**
-
-The "Brainrot Police" project adopted a user-centric philosophy with the following goals:
-
-- **Reducing the addiction potential** of Instagram while still offering its essential features.
-- **Increasing users' awareness** of social media addiction and their time spent on the platform.
-- **Giving users more power to customize** their Instagram experience.
-- **Assisting users to quit or reduce usage** without being overly forceful.
-
-**Key Features Implemented and Targeted Mechanisms**
-
-We developed several innovative features to address the identified problems and foster healthier platform usage:
-
-1.  **"Goodbye Infinite Scroll"**:
-
-    - **Mechanisms Targeted**: **Infinite Scroll**, **Unconscious behavior**, **No stopping cues**, and the **Dopamine Cycle** (seeking, anticipating, unpredictable reward).
-    - **How it works**: To combat the unconscious behavior and absence of stopping cues inherent in infinite scrolling, we introduced an interactive "nudge". After a certain number of interactions, a message appears, for example: **"You already clicked here 5 times today, do you really need more?"**. Users are then given the options "Quit" or "Load more". This "nudge" progressively strengthens with increased usage.
-
-2.  **"Goodbye Colors" (Grayscale Mode)**:
-
-    - **Mechanisms Targeted**: **Enticing UI**, **Visual Gratification**, and the **Dopamine Cycle**.
-    - **How it works**: In cases of overuse, the application interface automatically **switches to grayscale (black and white)**. This visual change aims to make the app less rewarding and appealing, reducing gratification and disincentivizing prolonged use, ultimately contributing to decreased screen time.
-
-3.  **"The Mirror"**:
-
-    - **Mechanisms Targeted**: **Lack of Self-awareness** regarding usage, and **Unconscious behavior**.
-    - **How it works**: This feature **displays the user's own image on the screen**. Seeing oneself promotes self-awareness, making users more conscious of their behavior and its impact on their personal goals.
-
-4.  **Time-Spent Indicator**:
-
-    - **Mechanisms Targeted**: **Losing track of time**, and **Lack of awareness** about usage.
-    - **How it works**: A visible indicator shows the current time spent using the app. This promotes awareness and encourages users to set and adhere to limits on their usage.
-
-5.  **More Settings (Advanced Customization - Functionalities)**:
-
-    - **Mechanisms Targeted**: **Infinite Scroll**, **Dopamine Cycle**, **Communication addiction**, **Entertainment addiction**, **Enticing UI**.
-    - **How it works**: We designed the system to give users the ability to **customize almost every aspect of their experience**. Within the settings, users can enable or disable specific functionalities (e.g., Posts, Reels, Stories, Share, Comment, Like, Save) and control their visibility in different sections of the app (e.g., homepage, search page, direct messages). This reduces exposure to potentially addictive content or unwanted engagement mechanisms.
-
-6.  **Limitations**:
-
-    - **Mechanisms Targeted**: **Losing track of time**, **Compulsive behavior**, and **Entertainment addiction**.
-    - **How it works**: Users can set detailed limits for their app usage. This includes **daily time limits** for the overall app (e.g., 2 hours) or for specific features like Reels (e.g., 30 minutes) and Posts (e.g., 2 hours). Users can also specify a **maximum number of Reels** they wish to view per day (e.g., 50, 100, 200, 500, or a personalized number) and define **scheduled limits** for specific daily hours (e.g., 10:00 to 22:00) and chosen days of the week. This provides proactive control against excessive use.
-
-7.  **Content Preferences**:
-
-    - **Mechanisms Targeted**: **Enticing UI**, **Content triggering the Dopamine Cycle**, **Distortion of perception** (e.g., body image, political views), and **Attention fragmentation**.
-    - **How it works**: This feature allows users to tailor the content they see. Users can choose between an **Algorithmic Feed** (Instagram's default) or a **Chronological Feed** (displaying content in publication order, potentially offering a wider range of viewpoints). Furthermore, users can **manage preferences for specific content categories** like Political, News, Sexually suggestive, Nudity, Misrepresentation, Dark humor, Sensitive content, and Not yet fact-checked. For each category, users can choose to "Hide," "Warn," or "Show" the content. This allows users to reduce exposure to potentially harmful or highly engaging content.
-
-8.  **"Friends-only mode"**:
-
-    - **Mechanisms Targeted**: **Communication addiction**, **FOMO**, **Social affirmation**, **Distractions**, and **Unwanted content**.
-    - **How it works**: When enabled, this setting allows users to **see only content from people who follow them back**, hiding all other pages. The objective is to reduce distractions, exposure to unwanted content, and the pressure related to social affirmation from a broader audience.
-
-9.  **"I'm Quitting!" Mode**:
-
-    - **Mechanisms Targeted**: **Painful inability to disconnect**, **Compulsive behavior**, **Emotional and motor agitation**, **Anxiety**, **Obsessive thoughts about online activities**, and **Fantasies/dreams about the Internet**.
-    - **How it works**: Designed for a structured digital detox. This functionality enables users to **block access to Instagram for a predefined period** (hours or days). To unlock the app before the set time, users must complete specific tasks (e.g., "Meditate," "Feed the cat," "Clean the house"), with the option to attach a photo as proof. Users can also decide if their content remains visible to others during this block. This function helps users overcome the "painful inability to disconnect" and manage potential withdrawal symptoms.
-
-10. **A Social Campaign**:
-    - **Mechanisms Targeted**: **Lack of awareness** about the risks of social media addiction, and **Denial of addiction**.
-    - **How it works**: To actively inform users, **in-app informational campaigns** are integrated through posts, reels, and stories. These direct messages explain social media addiction, how to manage it, and present the tools offered by the app, featuring warnings like: **"Social media seriously harms your mental health and people around you - Stop now"**. This aims to educate users about the risks and promote a change in mindset.
-
-**Conclusion**
-
-The "Brainrot Police" features represent a significant commitment in UX design to tackle a critical contemporary challenge: social media addiction. By providing users with proactive tools for awareness, personalization, and self-limitation, we aim to **transform the Instagram experience from potentially addictive to one that is more balanced and user-controlled**, promoting lasting digital well-being.
+| Feature                  | Targeted Mechanism / Purpose                                                                                  | Context |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------- | ------- |
+| **Chronological Feed**   | Decrease the **time users spent on platforms**. Counteracts algorithmic ranking. Reduce political engagement. |         |
+| **No Infinite Scroll**   | Introduce stopping cues. Introduce friction in continuing usage                                               |         |
+| **No Pull-to-Refresh**   | Remove anticipation of new content.                                                                           |         |
+| **Time spent indicator** | Increase awareness of time spent.                                                                             |         |
+| **In-app mirror**        | Increase self-awareness and possibly trigger self-regulation.                                                 |         |
+| **FOMO mode**            | Reduce anxiety related to missing out on friend's life.                                                       |         |
+| **Additional settings**  | Adds custom content filtering, features toggling and stricter time limits.                                    |         |
+| **"I'm quitting" mode**  | Gives users a more structured way to take longer breaks from usage                                            |         |
 
 [^1]: Metaphor inspired by harm-reduction models in substance addiction research.
 [^2]: Wadsley, M., Bhandari, R., & Duka, T. (2023). _The structural and functional neural correlates of social networking site use: A systematic review._ Neuroscience & Biobehavioral Reviews.
