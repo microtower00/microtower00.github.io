@@ -2,13 +2,14 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { useEffect } from "react";
-import SiteHeader from "../components/layout/Header";
 import LatestProjects from "../components/sections/LatestProjects";
 import ProjectFrontmatter from "../components/ui/ProjectFrontmatter";
 import { Project } from "../types/frontmatter";
-import TagsList from "../components/ui/TagsList";
 import Footer from "../components/layout/Footer";
 import PostLayout from "../components/ui/PostLayout";
+import FoldableHeading, {
+  FoldableHeadingProps,
+} from "../components/mdx/FoldableHeading";
 
 const projectComponents = {
   h1: (props: any) => <h1 className="blogHeadingL" {...props} />,
@@ -45,6 +46,9 @@ const projectComponents = {
       rel="noopener noreferrer"
       {...props}
     />
+  ),
+  FoldableHeading: (props: FoldableHeadingProps) => (
+    <FoldableHeading {...props} />
   ),
 };
 

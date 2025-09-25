@@ -5,8 +5,106 @@ description: "Redesign of Instagram to make it less addicting and more ethical"
 details: "Neuro-designed for better interactions"
 imageSrc: "../../images/indoor-navigator.png"
 imageAlt: "Rehab Instagram redesign"
-date: "2025-10-01"
 public: true
+date: "2025-10-01"
 ---
 
-# ayoooo
+If Instagram is the heroin of digital attention, we attempted to design its methadone.[^1]
+
+These words might sound too strong but, during our literature review for undertanding social media abuse, we found several scientific articles comparing social media addiction to substance addiction.
+
+In brief, social media addiction is linked to:
+
+- Mental problems: body perception issues, FOMO, depression, low self-esteem
+- Physical health issues: poor posture, eye strain, disrupted sleep patterns
+- Erosion of genuine relationships: prioritizing virtual personas over meaningful real-life connections
+- Decreased productivity and concentration difficulties
+
+Grounding the work in the principles of **social psychology**, I worked on a small team project to redesign Instagram.
+
+## Researching literature
+
+Me and my group had first hand experience about the negative effects of using social medias, but we did not want our project to be grounded solely on our views. We proceeded to review relevant scientific literature to better gain an understanding of addictions and specifically social media addiction.
+
+### Addiction
+
+While Social Media Addiction is not recognized as an official disorder in the [DSM-5](https://www.psychiatry.org/psychiatrists/practice/dsm) , it shares many characteristics with recognized behavioural addictions. These include:
+
+- **Compulsive Use**: An uncontrollable urge to use social media, often at the expense of other activities
+- **Withdrawal Symptoms**: Feelings of anxiety, irritability, or depression when not using social media
+- **Tolerance**: The need to spend increasing amounts of time on social media to achieve the same level of satisfaction
+- **Negative Impact**: Significant impairment in social, occupational, or other important areas of functioning due to excessive social media use
+
+### Features
+
+We also discovered came to the understanding that multiple features present in Instagram are specifically designed to exploit human psychology and brain mechanisms.
+
+The most notable ones are:
+
+- **Infinite scroll**, leveraging unconscious behaviours to keep us on the platform, performed by the removal of stopping cues
+- **Pull-to-refresh**, a mechanism that creates an anticipation of new content, similar to the one experienced in gambling
+- **Social Approval Metrics**, a feature that provides instant gratification and validation, triggering dopamine release in the brain
+- **Notifications**, with their power to capture user's attention and bring them back on the platform
+- **Algorithmic Content Curation**, which personalizes the user experience but can also create echo chambers and reinforce addictive behaviours
+
+## Redesigning Instagram
+
+WIth this knowledge in mind, we brainstormed. Our goal was not to create something realistically implementable, as it it in Meta's interest not to. Our goal was to show users what a less addictive Instagram looks like. Our proposed list of changes is designed to be part of a modified version of the original app, that keeps the original design language but adds or removes features. A concept for an unofficial [alternative frontend](https://www.trackawesomelist.com/mendel5/alternative-front-ends/readme/).
+
+### Overview of changes
+
+<table class="blogTable">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Targeted Mechanism / Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Chronological Feed**</td>
+      <td>
+        Decrease the **time users spent on platforms**. Counteracts algorithmic
+        ranking. Reduce political engagement.
+      </td>
+    </tr>
+    <tr>
+      <td>**No Infinite Scroll**</td>
+      <td>Introduce stopping cues. Introduce friction in continuing usage</td>
+    </tr>
+    <tr>
+      <td>**No Pull-to-Refresh**</td>
+      <td>Remove anticipation of new content.</td>
+    </tr>
+    <tr>
+      <td>**Time spent indicator**</td>
+      <td>Increase awareness of time spent.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>**In-app mirror**</td>
+      <td>Increase self-awareness and possibly trigger self-regulation.</td>
+    </tr>
+    <tr>
+      <td>**FOMO mode**</td>
+      <td>Reduce anxiety related to missing out on friend's life.</td>
+    </tr>
+    <tr>
+      <td>**Additional settings**</td>
+      <td>
+        Adds custom content filtering, features toggling and stricter time
+        limits.
+      </td>
+    </tr>
+    <tr>
+      <td>**"I'm quitting" mode**</td>
+      <td>
+        Gives users a more structured way to take longer breaks from usage
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+[^1]: Metaphor inspired by harm-reduction models in substance addiction research.
+[^2]: Wadsley, M., Bhandari, R., & Duka, T. (2023). _The structural and functional neural correlates of social networking site use: A systematic review._ Neuroscience & Biobehavioral Reviews.
+[^3]: Volkow, N. D., Koob, G. F., & McLellan, A. T. (2016). _Neurobiologic advances from the brain disease model of addiction._ NEJM.

@@ -314,30 +314,49 @@ p {
 }
 
 /* BLOG */
-/* .blog-post-style {
-  line-height: 1.7;
-  img {
-    display: block;
-    width: 90%;
-    max-height: 80vh;
-    height: auto;
-    object-fit: cover;
-    margin: 0 auto;
-    border-radius: 8px;
-  }
-  pre {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 16px;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-family: "Courier New", Courier, monospace;
-  }
-  code {
-    font-style: italic;
-    font-size: inherit;
-  }
-} */
+.blogTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.blogTable p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.blogTable th {
+  border-bottom: 2px solid var(--gray-text-color);
+  color: var(--green-accent);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.blogTable td {
+  border-bottom: 1px solid var(--border-dark-gray);
+  padding: 0.75rem 1rem;
+}
+
+.blogTable tr:last-child td {
+  border-bottom: none;
+}
+
+.blogTable tr:hover td {
+  background-color: rgba(var(--green-accent), 0.9);
+}
+
+.blogTable th:first-child,
+.blogTable td:first-child {
+  padding-left: 1.5rem;
+}
+
+.blogTable th:last-child,
+.blogTable td:last-child {
+  padding-right: 1.5rem;
+}
 .project-post-container {
   padding: 16px 0;
 }
