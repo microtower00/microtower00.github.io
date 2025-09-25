@@ -12,6 +12,7 @@ export interface CardProps {
   description?: string;
   details?: string;
   isMock?: boolean;
+  cardInfo?: string;
 }
 
 function isExternalHref(href?: string): boolean {
@@ -33,11 +34,10 @@ const Card: React.FC<CardProps> = ({
   description,
   details,
   isMock = false,
+  cardInfo = isMock ? "SOON" : "",
 }) => {
   const isExternal = isExternalHref(href);
-  const cardClass =
-    (compact ? "project-card-compact" : "project-card") +
-    (isMock ? " mock-card" : "");
+  const cardClass = compact ? "project-card-compact" : "project-card";
 
   const content = (
     <>
@@ -126,6 +126,7 @@ const Card: React.FC<CardProps> = ({
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
     >
+      {!!cardInfo && <div className="card-info">{cardInfo}</div>}
       {content}
     </a>
   );

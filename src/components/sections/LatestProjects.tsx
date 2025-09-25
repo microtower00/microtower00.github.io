@@ -42,6 +42,7 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
                   height: 300
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
+                  transformOptions: { fit: COVER, cropFocus: CENTER }
                 )
               }
             }

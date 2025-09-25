@@ -414,9 +414,8 @@ a.project-card-compact {
   transition: outline 0.15s ease;
 }
 
-.mock-card::before {
+.card-info {
   z-index: 10;
-  content: "SOON";
   background-color: var(--primary-color);
   outline: 1px solid var(--border-dark-gray);
   border-radius: 4px;

@@ -16,6 +16,7 @@ export interface Frontmatter {
   imageAlt?: string;
   author?: string;
   details?: string;
+  cardInfo?: string;
 }
 
 export interface Project {
