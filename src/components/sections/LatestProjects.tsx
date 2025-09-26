@@ -26,7 +26,6 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
           internal: { contentFilePath: { regex: "/content/projects/" } }
           frontmatter: { public: { eq: true } }
         }
-        limit: 3
       ) {
         nodes {
           id
@@ -43,6 +42,7 @@ const LatestProjects: React.FC<LatestProjectsProps> = ({ excludeId }) => {
                   height: 300
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
+                  transformOptions: { fit: COVER, cropFocus: CENTER }
                 )
               }
             }

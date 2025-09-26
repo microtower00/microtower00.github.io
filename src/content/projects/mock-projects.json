@@ -16,7 +16,18 @@
     "imageData": { "src": "./images/webp/consumption-calculator.webp" }
   },
   {
-    "title": "Mountain valley community app wireframing",
+    "slug": "/projects/less-addictive-instagram-redesign",
+    "title": "neuro-design against addiction",
+    "description": "Conceptualization of interventions and features that would make users more aware of their time spent on social media.",
+    "details": "Science backed",
+    "imageData": { "src": "./images/webp/mocked-proj/igPacket.png" },
+    "imageAlt": "Rehab Instagram redesign",
+    "public": false,
+    "date": "2025-10-01",
+    "href": "https://www.figma.com/design/EeQFVr4PRqtGJgiGeDK6LZ/Instagram-Redesign?node-id=0-1&t=9UNCc3YcqTAtRLI8-1"
+  },
+  {
+    "title": "wireframing a community app",
     "description": "During the HIT UX Challenge 2024, a 7 days design sprint, I worked with a team of 4 conceptualize a community app.",
     "details": "Rapid prototyping and user testing",
     "imageAlt": "Mountain valley community app wireframing",

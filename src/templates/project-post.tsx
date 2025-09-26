@@ -2,13 +2,14 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { useEffect } from "react";
-import SiteHeader from "../components/layout/Header";
 import LatestProjects from "../components/sections/LatestProjects";
 import ProjectFrontmatter from "../components/ui/ProjectFrontmatter";
 import { Project } from "../types/frontmatter";
-import TagsList from "../components/ui/TagsList";
 import Footer from "../components/layout/Footer";
 import PostLayout from "../components/ui/PostLayout";
+import FoldableHeading, {
+  FoldableHeadingProps,
+} from "../components/mdx/FoldableHeading";
 
 const projectComponents = {
   h1: (props: any) => <h1 className="blogHeadingL" {...props} />,
@@ -46,6 +47,9 @@ const projectComponents = {
       {...props}
     />
   ),
+  FoldableHeading: (props: FoldableHeadingProps) => (
+    <FoldableHeading {...props} />
+  ),
 };
 
 type ProjectPostProps = {
@@ -78,6 +82,7 @@ export default function ProjectPost({ data, children }: ProjectPostProps) {
 export const query = graphql`
   query ProjectPostById($id: String!) {
     mdx(id: { eq: $id }) {
+      body
       id
       frontmatter {
         title
@@ -91,3 +96,12 @@ export const query = graphql`
     }
   }
 `;
+
+function extractTextFromReactNode(node: React.ReactNode): string {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return node.toString();
+  if (Array.isArray(node)) return node.map(extractTextFromReactNode).join(" ");
+  if (React.isValidElement(node))
+    return extractTextFromReactNode(node.props.children);
+  return "";
+}

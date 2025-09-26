@@ -178,6 +178,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
         date: Date @dateformat
         slug: String
         public: Boolean
+        cardInfo:String
       }
     `);
   };

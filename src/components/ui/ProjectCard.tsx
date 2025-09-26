@@ -13,6 +13,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, compact }) => {
     project.frontmatter.imageSrc?.childImageSharp
       ? project.frontmatter.imageSrc.childImageSharp.gatsbyImageData
       : { src: project.frontmatter.imageSrc };
+  console.log("cardInfo:", project.frontmatter.cardInfo);
   return (
     <Card
       href={project.frontmatter.slug}
@@ -22,6 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, compact }) => {
       title={project.frontmatter.title}
       description={project.frontmatter.description}
       details={project.frontmatter.details}
+      cardInfo={project.frontmatter.cardInfo}
     />
   );
 };
