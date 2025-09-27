@@ -1,0 +1,19 @@
+{
+  "entries": [
+    {
+      "icon": "/images/companyIcons/unitn.png",
+      "company": "HCI @ UniTn",
+      "startEnd": "2024 - NOW"
+    },
+    {
+      "icon": "/images/companyIcons/unox.png",
+      "company": "Unox",
+      "startEnd": "2023 - Present"
+    },
+    {
+      "icon": "/images/companyIcons/unipd.png",
+      "company": "CompSci @ UniPd",
+      "startEnd": "2019 - 2023"
+    }
+  ]
+}

@@ -4,16 +4,15 @@ import ProjectList from "../components/sections/ProjectsList";
 import { graphql } from "gatsby";
 import HeroSection from "../components/sections/HeroSection";
 import { HomeProjectsQueryData } from "../types/frontmatter";
-import LatestProjects from "../components/sections/LatestProjects";
 import Footer from "../components/layout/Footer";
-import TestComponents from "../components/TestComponents";
+import TimelineWrapper from "../components/TimelineWrapper";
 
 const IndexPage: React.FC<PageProps<HomeProjectsQueryData>> = ({ data }) => {
   return (
     <>
       <main className="main" style={{}}>
-        <TestComponents />
         <HeroSection />
+        <TimelineWrapper />
         <ProjectList projects={data.allMdx.nodes} />
       </main>
       <Footer />

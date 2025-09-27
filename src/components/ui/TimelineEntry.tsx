@@ -42,7 +42,7 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
               position: "absolute",
               width: "32px",
               height: "32px",
-              backgroundColor: "rgba(0, 128, 0, 0.2)", // Example color with 20% transparency
+              backgroundColor: "rgba(0, 128, 0, 0.2)",
               borderRadius: "999px",
             }}
           />
@@ -69,8 +69,8 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
             width: "100%",
             height: "2px",
             background: latest
-              ? "linear-gradient(to right, var(--green-accent), #000000)"
-              : "linear-gradient(to right, #000000, #616161, #000000", // Horizontal gradient line
+              ? "linear-gradient(to right, var(--green-accent), var(--surface-color)"
+              : "linear-gradient(to right, var(--surface-color), var(--gray-text-color), var(--surface-color)", // Horizontal gradient line
           }}
         />
       </div>
@@ -91,6 +91,7 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
             alignItems: "center",
             justifyContent: "center",
             width: "32px",
+            overflow: "hidden",
           }}
         >
           {icon}
