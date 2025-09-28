@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "icon": "/images/companyIcons/unitn.png",
+      "company": "HCI @ UniTn",
+      "startEnd": "2024 - NOW",
+      "href": "https://corsi.unitn.it/en/human-computer-interaction/program/overview"
+    },
+    {
+      "icon": "/images/companyIcons/unox.png",
+      "company": "Unox",
+      "startEnd": "2023 - 2024",
+      "href": "https://www.unox.com/en/"
+    },
+    {
+      "icon": "/images/companyIcons/unipd.png",
+      "company": "CompSci @ UniPd",
+      "startEnd": "2019 - 2023",
+      "href": "https://www.unipd.it/offerta-didattica/corsi-di-laurea-2019-20/scienze?ordinamento=2011&key=SC1167&tipo=L&scuola=SC"
+    }
+  ]
+}
