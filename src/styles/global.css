@@ -949,6 +949,7 @@ a.timeline-company:hover {
   color: var(--gray-text-color);
   cursor: pointer;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .timeline-see-all-button:hover {
