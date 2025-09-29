@@ -12,7 +12,7 @@
     "description": "Developed the consumption model and webapp for a parametric consumption calculator of ovens, with downloadable PDF report.",
     "details": "Increased customrer consumption awareness",
     "imageAlt": "Oven consumption calculator UI",
-    "href": "https://www.unox.com/en_gb/consumption-calculator/",
+    "href": "https://www.unox.com/en_gb/consumption-calculator?ovenId=12458",
     "imageData": { "src": "./images/webp/consumption-calculator.webp" }
   },
   {
