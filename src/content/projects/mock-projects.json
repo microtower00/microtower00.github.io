@@ -1,11 +1,12 @@
 [
   {
     "title": "Portfolio website",
-    "description": "I built this website to showcase my work and to learn more about Gatsby, CI/CD and have more experience with React.",
+    "description": "I designed and built this website to showcase my work and to learn more about Gatsby, CI/CD and experience implementing my own designs",
     "details": "page generation from markdown files",
     "imageAlt": "Code editor showcasing the development of the portfolio website",
     "imageData": { "src": "/images/webp/portfolio-code.webp" },
-    "href": "https://github.com/microtower00/microtower00.github.io"
+    "href": "https://github.com/microtower00/microtower00.github.io",
+    "cardInfo": "CODE"
   },
   {
     "title": "Oven consumption calculator",
@@ -13,18 +14,8 @@
     "details": "Increased customrer consumption awareness",
     "imageAlt": "Oven consumption calculator UI",
     "href": "https://www.unox.com/en_gb/consumption-calculator?ovenId=12458",
-    "imageData": { "src": "./images/webp/consumption-calculator.webp" }
-  },
-  {
-    "slug": "/projects/less-addictive-instagram-redesign",
-    "title": "neuro-design against addiction",
-    "description": "Conceptualization of interventions and features that would make users more aware of their time spent on social media.",
-    "details": "Science backed",
-    "imageData": { "src": "./images/webp/mocked-proj/igPacket.png" },
-    "imageAlt": "Rehab Instagram redesign",
-    "public": false,
-    "date": "2025-10-01",
-    "href": "https://www.figma.com/design/EeQFVr4PRqtGJgiGeDK6LZ/Instagram-Redesign?node-id=0-1&t=9UNCc3YcqTAtRLI8-1"
+    "imageData": { "src": "./images/webp/consumption-calculator.webp" },
+    "cardInfo": "CODE"
   },
   {
     "title": "wireframing a community app",
@@ -32,6 +23,16 @@
     "details": "Rapid prototyping and user testing",
     "imageAlt": "Mountain valley community app wireframing",
     "href": "https://www.figma.com/proto/GUXnvmtDMVe9F22sjCkmYQ/UX-Challenge---Val-di-Fiemme?node-id=18-182&p=f&t=SNlcJsblJQ5dJLOP-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A182&device-frame=0",
-    "imageData": { "src": "./images/webp/hit-ux-challenge-2024.webp" }
+    "imageData": { "src": "./images/webp/hit-ux-challenge-2024.webp" },
+    "cardInfo": "PROTO"
+  },
+  {
+    "title": "Music festival website design",
+    "description": "Designed a website for a mock music festival, starting from from the branding to the wireframes and final high-fidelity prototype.",
+    "details": "UI/UX design",
+    "imageAlt": "Music festival website design",
+    "imageData": { "src": "./images/webp/mocked-proj/sunfest.png" },
+    "href": "https://www.figma.com/proto/U07cq4mWqPtF7yX17Biacu/Festival?node-id=285-5085&t=qhHMB27STLdbKof1-1&scaling=min-zoom&content-scaling=fixed&page-id=237%3A2863&starting-point-node-id=285%3A5085&show-proto-sidebar=1",
+    "cardInfo": "PROTO"
   }
 ]
