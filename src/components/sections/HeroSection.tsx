@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
           MICHELE CAZZARO
         </h1>
         <h1 style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
-          HCI STUDENT AND FRONTEND DEVELOPER
+          UX DESIGNER & FRONTEND DEVELOPER
         </h1>
         <p style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
           After graduating in Computer Science and working as a frontend
