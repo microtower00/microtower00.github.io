@@ -6,21 +6,84 @@ details: "NASA-TLX questionnaire // USR Research"
 imageAlt: "Map showcasing different elevation levels and slope highlightings"
 imageSrc: "../../images/skitourenguru.png"
 public: true
-date: "2025-08-24"
+date: "2026-01-19"
 ---
 
-<FoldableHeading title="Investigating cognitive load">
+> A small user research in order to understand the cognitive load of planning a ski tour using [skitourenguru.ch](https://www.skitourenguru.ch), a planning tool specifically designed to assist **alpine roamers** in safely planning their tours or trips. I decided to investigate specifically the cognitive load, as I viewed this as an important factor for critical desicions making.
+> To investigate it I chose to use a standardized questionnaire designed by NASA, the [NASA-TLX](https://humansystems.arc.nasa.gov/groups/TLX/), to assess the subjective workload of a human-machine interaction task.
 
-I'm conducting a small user research in order to understand the cognitive load of planning a ski tour using [skitourenguru.ch](https://www.skitourenguru.ch), a planning tool specifically designed to assist **alpine roamers** in safely planning their tours or trips. I decided to investigate specifically the cognitive load, as I viewed this as an important factor for critical desicions making.
-To investigate it I chose to use a standardized questionnaire designed by NASA, the [NASA-TLX](https://humansystems.arc.nasa.gov/groups/TLX/), to assess the subjective workload of a human-machine interaction task.
+<FoldableHeading title="The Challenge">
 
-</FoldableHeading><FoldableHeading title="The planning tool">
+**Problem**: Ski-tour planning is safety-critical. How effectively does skitourenguru.ch, a tool aggregating avalanche bulletins, maps, and trail data, support users in finding and **comparing** low-risk routes?
 
-The planning tool of choice, the Komoot of ski-touring, is a project funded by multiple institutions that wanted to promote the safety of mountain sports. The tool sources data from a variety of sources, all publicly available, and combines them in order to give the user a better understanding of the condition in different routes, as well as giving the user options to create and export custom routes.
-During all the steps of the planning the user is given information to personally evaluate the risks and determine wether he trusts the sources.
-
-</FoldableHeading><FoldableHeading title="The findings">
-
-As soon as I'm done with the research I'll update this section with the findings, so stay tuned! I will also publish a short report on my research.
+> What interface barriers create unnecessary cognitive load during route comparison?
 
 </FoldableHeading>
+<FoldableHeading title="The Study">
+The study was conducted through **moderated usability testing sessions**, involving 5 experienced ski-tourers. The think-aloud protocol and NASA-TLX questionnaire were the strongest methodological pillars that allowed me to gather both qualitative and quantitative data on user experience and cognitive load.
+
+The sessions required participants to complete 3 ecological tasks:
+
+- Find low-risk tour (800-1000m ascent, &lt;150km from Trento)
+- Compare 2 routes' risk profiles and choose the safer one
+- Export the GPX file of the chosen route
+
+</FoldableHeading>
+
+<FoldableHeading title="Key Findings">
+
+1. **Route comparison = major pain point**  
+   No "compare tours" feature → users toggled between routes, relying on memory for slope/risk data. Task 2 took longest (290s avg).
+
+2. **Menu confusion**  
+   Right-side menu lacked hierarchy. Donation banner distracted from critical info.
+
+3. **Map friction**  
+   Overlapping routes hard to select.
+
+**Strength**: Color coding for avalanche risk/slope instantly intuitive.
+
+**NASA-TLX** scores showed a low to medium workload, with an average of 4.7 out of 10. This metric, considered informative due to the small sample size, highlighted that mental demand and effort were the highest contributors to cognitive load.
+
+</FoldableHeading>
+
+<FoldableHeading title="Design Recommendations">
+  <table class="blogTable">
+    <thead>
+      <tr>
+        <th>Issue</th>
+        <th>Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No route comparison</td>
+        <td>Add side-by-side view with overlaid risk metrics</td>
+      </tr>
+      <tr>
+        <td>Menu distraction</td>
+        <td>Restructure hierarchy, minimize donation banner</td>
+      </tr>
+      <tr>
+        <td>Draw mode stuck</td>
+        <td>Clearer exit icon + status indicator</td>
+      </tr>
+      <tr>
+        <td>Map selection</td>
+        <td>Improve overlapping route handling</td>
+      </tr>
+    </tbody>
+  </table>
+
+**Impact**: These changes reduce extraneous cognitive load during
+safety-critical decisions.
+
+</FoldableHeading>
+
+<a
+  href="/Skitourenguru_Usability_study_FINAL.pdf"
+  target="\_blank"
+  rel="noopener noreferrer"
+>
+  See the Full research report (PDF)
+</a>
