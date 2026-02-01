@@ -271,7 +271,9 @@ p {
   width: 48px;
   height: 48px;
   cursor: pointer;
-  transition: border-color 0.1s ease, border-width 0.1s ease;
+  transition:
+    border-color 0.1s ease,
+    border-width 0.1s ease;
   box-sizing: border-box;
 }
 
@@ -488,11 +490,13 @@ a.project-card-compact {
     box-shadow: none;
   }
   50% {
-    box-shadow: 0 0 15px var(--accent-color),
+    box-shadow:
+      0 0 15px var(--accent-color),
       /* Brighter, tighter glow */ 0 0 40px rgba(var(--accent-color-rgb), 0.6); /* Wider, softer glow */
   }
   100% {
-    box-shadow: 0 0 0px var(--accent-color),
+    box-shadow:
+      0 0 0px var(--accent-color),
       0 0 12px rgba(var(--accent-color-rgb), 0.7);
   }
 }
@@ -691,7 +695,9 @@ a.project-card-compact {
   font-size: 16px;
   line-height: 100%;
   text-transform: uppercase;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .fancy-link::after {
@@ -703,7 +709,10 @@ a.project-card-compact {
   height: 2px;
   width: 100%;
   background-color: var(--fancy-link-color, var(--accent-color));
-  transition: transform 0.3s ease, width 0.3s ease, left 0.3s ease,
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease,
+    left 0.3s ease,
     bottom 0.3s ease;
 }
 
@@ -757,7 +766,10 @@ a.project-card-compact {
 
 .hero-image-blur {
   filter: blur(24px) grayscale(1);
-  transition: filter 0.4s, transform 0.4s, opacity 0.4s;
+  transition:
+    filter 0.4s,
+    transform 0.4s,
+    opacity 0.4s;
 }
 
 .hero-image-unblur {
@@ -779,7 +791,10 @@ a.project-card-compact {
 .hero-image-blur,
 .hero-image-unblur img,
 .hero-image-blur img {
-  transition: filter 0.4s, transform 0.4s, opacity 0.4s;
+  transition:
+    filter 0.4s,
+    transform 0.4s,
+    opacity 0.4s;
 }
 
 .project-post-content img {
@@ -912,7 +927,7 @@ a.timeline-company:hover {
   width: 100%;
   max-width: 800px;
   position: relative;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
 
 .timeline-icon-image {
