@@ -1,6 +1,12 @@
 {
   "entries": [
     {
+      "icon": "/images/companyIcons/google.png",
+      "company": "UX Design Intern @ Google",
+      "startEnd": "2026",
+      "href": "https://www.google.com/about/careers/applications/internships/"
+    },
+    {
       "icon": "/images/companyIcons/unitn.png",
       "company": "HCI @ UniTn",
       "startEnd": "2024 - NOW",
@@ -8,7 +14,7 @@
     },
     {
       "icon": "/images/companyIcons/unox.png",
-      "company": "Unox",
+      "company": "SWE @ Unox",
       "startEnd": "2023 - 2024",
       "href": "https://www.unox.com/en_gb/"
     },
