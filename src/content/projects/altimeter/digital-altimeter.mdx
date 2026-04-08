@@ -1,0 +1,99 @@
+---
+slug: "/projects/designing-a-digital-altimeter"
+title: "Digital Altimeter"
+description: "A product for alpine enthusiasts"
+details: ""
+imageAlt: "Indoor navigator design"
+imageSrc: "../../../images/PLACEHOLDER.png"
+public: true
+date: "2026-04-08"
+---
+
+> A tool for ski-tourers and other alpine athletes to increase remaining effort awareness during trainings and long days.
+
+While [skinning](https://en.wikipedia.org/wiki/Ski_touring) up the alps during long days, you need to constantly evaluate the risk you're exposed to. Moving quickly reduces risk, but strains you faster. While fatigued your decision making is impaired and your capabilities are lower.
+Understanding the remaining climb is a safety requirement. It allows the athlete to judge if they have the reserves to increase their speed without compromising their form or decision-making.
+
+[Distance and residual vertical gain are the most common proxies for remaining effort](https://backcountryaccess.com/en-it/blog/p/how-to-calculate-backcountry-touring-time-based-distance-elevation-gain); distance can be misleading in alpine sports as 2km of flat terrain are much
+easier than 2km of steep scrambling. I decided to focus on the latter as it is a
+very accessible proxy even if the route to the objective is unclear at the start
+of an activity.
+
+<FoldableHeading title="Auditing: smartwatches vs phones">
+Most slopes regulars use either a smartwatch or a phone to track and assist their activities. It can take a long time to access relevant information. 
+Smartphone are great as everyone already has access to one, but they can be hard to use in harsh environments.
+Smartwatches are more specialized tools and were the starting point for my analysis of the current solutions, but I found a few limitations that drove me to think about alternatives.
+
+1. Abundant guidance.
+
+   This is actually a double-edged sword. While navigating technical terrain, awareness of the evironment is essential at all times: smartwatches can be distracting, can interrupt flow state, can give a sense of false security on the route to take or on the estimated remaining effort. During high output activities the athlete is the only one who can really understand their condition.
+
+2. Some users don't like smartwatches.
+
+   It may be because of their look, weight, or they simply are already carrying another watch. A more <strong>minimal</strong> solution could be more appealing to them.
+
+3. There are athletes without wrists.
+
+   This is a more niche case, but it is important to consider. A solution that does not require a wrist-worn device could be more inclusive.
+
+4. Cost. It can be a barrier for some users, especially people new to a sport.
+
+I saw an opportunity to exercise my expertise while addressing the gap between high friction phones and maximalist smartwatches.
+
+</FoldableHeading>
+
+This was a big assumption, and I set off to validate that and more with a survey I distributed online. The survey aimed to validate:
+
+- Remaining elevation is a proxy for remaining effort for most of alpine athletes.
+- Friction is a problem amongst people who don't use smartwatches.
+- There's a niche that prefers minimal devices to smart-watches.
+
+<FoldableHeading title="Surveying my assumptions">
+I created and distributed online a [survey](https://forms.gle/rjEW9miBo2ofYZ5FA) in order to validate the assumptions I previously made.
+The key findings?
+- Remaining elevation is the primary proxy for remaining effort, followed only by route knowledge.
+- Time to information is a problem for people who don't use smartwatches, mostly due to glove usage and stashed phones
+- There's a niche that prefers minimal devices to smart-watches.
+- Compactness and lightness are nice to have but not as important as I initially thought.
+
+The survey revealed that the majority of respondants would prefer to access elevation information or other proxy relevant information in 2 or less seconds. The majority of smartwatch users can already do that, while the bulk of people using their phone to track their rides takes 5+ seconds. Roughly 60% of respondants reported using remaining elevation gain as their primary proxy for remaining effort, with most of the others relying on route knowledge. Device weight and volume are critical. Ease of use in the trail is essential: glove usage, wet/cold environments.
+
+</FoldableHeading>
+<FoldableHeading title="Constraints">
+
+CHANGE, TOO REPETItive
+Environmental: -20°C temperatures, high-glare snow, 30mph winds.
+
+Physical: Users are wearing 5mm thick gloves. No capacitive touch.
+
+Cognitive: User is at 3000m altitude with limited oxygen—UI must be "dead simple."
+
+</FoldableHeading>
+<FoldableHeading title="Designing the solution"></FoldableHeading>
+<FoldableHeading title="Impact and reflection"></FoldableHeading>
+
+1.  The Executive Summary (The "Hook")
+
+    The Problem: Fatigue in alpine sports leads to impaired decision-making and increased risk.
+
+    The Gap: Existing tools (smartwatches/phones) have high "time-to-information" or high cognitive load. Moreover require a predefined gpx track to follow, which is not always the case in alpine sports.
+
+    The Solution: A minimalist digital altimeter designed for sub-2-second data access in extreme conditions.
+
+    My Role: Research, Strategy, Industrial Design (or UX/UI).
+
+2.  The Solution & Iteration
+
+    Low-Fi to Hi-Fi: Show how you moved from a concept to a form factor.
+
+    Decision Log: "I chose [Physical Buttons] over [Touch] because..." or "I chose [E-Ink/High Contrast] because..."
+
+    User Flow: Show the "2-second journey" from pocket/clip to data.
+
+3.  Impact & Reflection
+
+    Validation: How did you test this? (Even if it’s a prototype test with friends).
+
+    What I’d do differently: "If I had a bigger budget, I’d explore haptic feedback to signal elevation milestones without looking at the screen."
+
+https://gemini.google.com/app/2a83bf1326a430b5
