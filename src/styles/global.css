@@ -19,6 +19,9 @@
   #heroImageOverlay {
     display: none !important;
   }
+  .timeline-wrapper {
+    overflow-x: scroll;
+  }
 }
 /* Variables */
 .heroXL {
